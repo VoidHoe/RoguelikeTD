@@ -6,6 +6,7 @@ extends Node2D
 @export_flags("Tranchant", "Percant", "Feu", "Magie", "Electrique") var weaknesses: int = 0
 @export_flags("Tranchant", "Percant", "Feu", "Magie", "Electrique") var resistances: int = 0
 @export var gold_reward: int = 10
+@export var is_elite: bool = false   # true → boss/élite (Crâne maudit lui donne +15 or)
 
 @onready var _speed_component: SpeedComponent = get_node_or_null("SpeedComponent")
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -98,7 +99,11 @@ func apply_dot(dps: float, duration: float, dmg_type: int) -> void:
 	_dot_type = dmg_type
 
 func apply_slow(factor: float, duration: float) -> void:
-	_slow_factor = minf(_slow_factor, factor)   # take worst slow
+	var effective_factor := factor
+	# Botte de vent : les ennemis déjà ralentis le sont encore plus (×0.8)
+	if RelicState.has_relic("Botte de vent"):
+		effective_factor *= 0.8
+	_slow_factor = minf(_slow_factor, effective_factor)   # prend le pire ralentissement
 	_slow_timer = max(_slow_timer, duration)
 
 # D_final = (D_base × M_type) × (1 - R_armor)
@@ -113,6 +118,14 @@ func take_damage(amount: int, dmg_type: int = DamageTypes.Type.PERCANT) -> void:
 
 	var effective_armor := 0.0 if dmg_type == DamageTypes.Type.FEU else armor
 	var final_dmg := int(amount * type_mult * (1.0 - effective_armor))
+
+	# ── Bonus reliques ────────────────────────────────────────────────────────
+	# Amulette de feu : +25 % dégâts Feu
+	if dmg_type == DamageTypes.Type.FEU and RelicState.has_relic("Amulette de feu"):
+		final_dmg = int(final_dmg * 1.25)
+	# Lame aiguisée : +20 % dégâts Tranchant
+	if dmg_type == DamageTypes.Type.TRANCHANT and RelicState.has_relic("Lame aiguisée"):
+		final_dmg = int(final_dmg * 1.20)
 
 	last_dmg_type = dmg_type
 

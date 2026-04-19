@@ -72,6 +72,12 @@ func get_total_chapters() -> int:
 func can_start_next_wave() -> bool:
 	return not _is_running and _current_wave < _waves.size() - 1
 
+func get_next_wave_is_boss() -> bool:
+	var next_idx := _current_wave + 1
+	if next_idx >= _waves.size():
+		return false
+	return _waves[next_idx]["is_boss"]
+
 func get_next_wave_preview() -> String:
 	var next_idx := _current_wave + 1
 	if next_idx >= _waves.size():

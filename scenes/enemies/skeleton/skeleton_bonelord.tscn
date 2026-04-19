@@ -193,6 +193,7 @@ armor = 0.2
 weaknesses = 12
 resistances = 3
 gold_reward = 80
+is_elite = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1762054388]
 position = Vector2(0, -32)
