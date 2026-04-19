@@ -2,16 +2,12 @@ extends Node2D
 
 @onready var iso_map: IsometricMap = $IsometricMap
 @onready var hero_board: HeroBoard = $HeroBoard
-@onready var hud_label: Label = $HUD/VBoxContainer/PlacedLabel
-@onready var base_hp_label: Label = $HUD/VBoxContainer/BaseHPLabel
 @onready var slot_markers: Node2D = $IsometricMap/SlotMarkers
 @onready var player_base: PlayerBase = $PlayerBase
 @onready var enemy_container: Node2D = $IsometricMap/Enemies
 @onready var enemy_path: Path2D = $IsometricMap/Path2D
-@onready var spawn_button: Button = $HUD/VBoxContainer/Button
 @onready var _wave_controller: WaveController = $WaveController
-@onready var _wave_preview_label: Label = $HUD/VBoxContainer/WavePreviewLabel
-@onready var _relic_label: Label = $HUD/VBoxContainer/RelicLabel
+@onready var _game_hud: GameHUD = $GameHUD
 
 const DraftScreenScene  := preload("res://scenes/ui/draft_screen.tscn")
 const ShopPanelScene    := preload("res://scenes/ui/shop_panel.tscn")
@@ -115,7 +111,7 @@ func _ready() -> void:
 	add_child(_shop_panel)
 	_shop_panel.hero_bought.connect(_on_hero_bought)
 
-	spawn_button.visible = false
+	_game_hud.spawn_wave_requested.connect(_on_spawn_button_pressed)
 	_update_hud()
 	_update_wave_preview()
 	_show_starting_draft()
@@ -154,11 +150,11 @@ func _on_wave_draft_chosen(type: String, data: Dictionary) -> void:
 		"hero_unlock":
 			_claimed_hero_ids.append(data.id)
 			_shop_panel.add_hero(data)
-			spawn_button.visible = true
+			_game_hud.set_spawn_visible(true)
 		"relic":
 			_active_relics.append(data)
 			_update_relic_label()
-			spawn_button.visible = true
+			_game_hud.set_spawn_visible(true)
 	_update_hud()
 
 func _on_hero_bought(hero_data: Dictionary) -> void:
@@ -226,7 +222,7 @@ func _on_slot_clicked(slot_node: Node2D) -> void:
 		_pending_placement = {}
 		_update_hud()
 		if not _is_wave_active and _draft_screen == null:
-			spawn_button.visible = true
+			_game_hud.set_spawn_visible(true)
 		return
 
 	if _is_wave_active:
@@ -271,9 +267,9 @@ func _on_wave_started(_wave_number: int, _total: int) -> void:
 	_cancel_reposition()
 	_is_wave_active = true
 	_pending_placement = {}
-	spawn_button.visible = false
+	_game_hud.set_spawn_visible(false)
 	_update_hud()
-	_wave_preview_label.text = ""
+	_game_hud.clear_wave_preview()
 
 func _on_wave_cleared(_wave_number: int) -> void:
 	_is_wave_active = false
@@ -323,7 +319,7 @@ func _on_event_chosen(type: String, data: Dictionary) -> void:
 	if not _wave_controller.can_start_next_wave():
 		_show_victory()
 		return
-	spawn_button.visible = true
+	_game_hud.set_spawn_visible(true)
 	_update_hud()
 
 func _pick_random_relic() -> Dictionary:
@@ -340,46 +336,27 @@ func _on_all_waves_cleared() -> void:
 
 # ─── HUD ──────────────────────────────────────────────────────────────────────
 func _update_relic_label() -> void:
-	if _relic_label == null:
-		return
-	if _active_relics.is_empty():
-		_relic_label.text = ""
-		return
-	var parts: Array[String] = []
-	for r in _active_relics:
-		parts.append(r.name)
-	_relic_label.text = "Reliques : " + "  ·  ".join(parts)
+	_game_hud.update_relics(_active_relics)
 
 func _update_wave_preview() -> void:
-	if _wave_preview_label == null or _wave_controller == null:
-		return
+	if _wave_controller == null: return
 	var preview := _wave_controller.get_next_wave_preview()
-	if preview.is_empty():
-		_wave_preview_label.text = ""
-	else:
-		var next_wave_num := _wave_controller.get_current_wave() + 1
-		_wave_preview_label.text = "Vague %d ▸ %s" % [next_wave_num, preview]
+	var is_boss := _wave_controller.get_next_wave_is_boss()
+	_game_hud.update_wave_preview(preview, is_boss)
 
 func _update_hud() -> void:
-	var total := hero_board.get_slot_count()
-	var placed := hero_board.get_occupied_slots().size()
 	var wave_cur := _wave_controller.get_current_wave() if _wave_controller else 0
 	var wave_tot := _wave_controller.get_total_waves() if _wave_controller else 0
-	var chap_cur := _wave_controller.get_current_chapter() if _wave_controller else 0
-	var chap_tot := _wave_controller.get_total_chapters() if _wave_controller else 0
-	var progress_text: String
-	if wave_cur > 0:
-		progress_text = "Ch.%d/%d · Vague %d/%d" % [chap_cur, chap_tot, wave_cur, wave_tot]
-	else:
-		progress_text = "Prêt"
-	var placement_hint := ""
+	_game_hud.update_hp(player_base.current_hp, player_base.max_hp)
+	_game_hud.update_gold(player_base.gold)
+	_game_hud.update_wave(wave_cur, wave_tot)
+	var hint := ""
 	if not _pending_placement.is_empty():
-		placement_hint = "\n→ Clique un slot pour placer : " + _pending_placement.name
+		hint = "→ Clique un slot vert pour placer : %s" % _pending_placement.name
 	elif _reposition_source != null:
-		placement_hint = "\n→ Clique un slot vide pour déplacer · Echap pour annuler"
-	hud_label.text = "Héros : %d / %d  |  %s  |  Or : %d%s" % [placed, total, progress_text, player_base.gold, placement_hint]
-	base_hp_label.text = "Base HP : %d / %d" % [player_base.current_hp, player_base.max_hp]
-	spawn_button.disabled = not _pending_placement.is_empty()
+		hint = "→ Clique un slot vide pour déplacer  ·  Echap pour annuler"
+	_game_hud.set_hint(hint)
+	_game_hud.set_spawn_disabled(not _pending_placement.is_empty())
 	_shop_panel.refresh(player_base.gold, _is_wave_active)
 
 # ─── score & sauvegarde ───────────────────────────────────────────────────────

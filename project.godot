@@ -27,6 +27,10 @@ window/size/viewport_height=1080
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
+[gui]
+
+theme/custom="res://scenes/ui/dark_fantasy.tres"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

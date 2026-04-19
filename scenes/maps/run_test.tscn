@@ -1,16 +1,17 @@
 [gd_scene format=4 uid="uid://7v67vge55a46"]
 
-[ext_resource type="Script" uid="uid://bu7cm3yyocor1" path="res://scripts/run_test.gd" id="1_sxtk8"]
+[ext_resource type="Script" uid="uid://dsstsbfc36r86" path="res://scripts/run_test.gd" id="1_sxtk8"]
 [ext_resource type="PackedScene" path="res://scenes/components/isometric_map.tscn" id="2_trtvt"]
 [ext_resource type="TileSet" uid="uid://c131oc6nu3u25" path="res://assets/tilesets/tileset_floor.tres" id="3_73eq5"]
 [ext_resource type="PackedScene" uid="uid://b7jkumxhgvxmc" path="res://scenes/components/slot.tscn" id="4_wvgw8"]
-[ext_resource type="Script" uid="uid://cnmivu0w6xms1" path="res://scripts/hero_board.gd" id="5_ugey6"]
-[ext_resource type="Script" uid="uid://bxjdyjyudn7bw" path="res://scripts/player_base.gd" id="6_hh44o"]
-[ext_resource type="Script" uid="uid://bhruypeyesirj" path="res://scripts/wave_controller.gd" id="7_gx4nb"]
-[ext_resource type="Script" uid="uid://c2bn7s6r7xqsf" path="res://scripts/chapter_definition.gd" id="8_5ejud"]
-[ext_resource type="Script" uid="uid://dpm6qvrfjeega" path="res://scripts/wave_definition.gd" id="9_hrqpd"]
-[ext_resource type="Script" uid="uid://duhhjhyufsjv1" path="res://scripts/wave_entry.gd" id="10_d3oru"]
-[ext_resource type="Script" uid="uid://nclsv6p3okbr" path="res://scripts/map_config.gd" id="11_trtvt"]
+[ext_resource type="Script" uid="uid://dnarxivoq5ttq" path="res://scripts/hero_board.gd" id="5_ugey6"]
+[ext_resource type="Script" uid="uid://dsqg6boq2qp2l" path="res://scripts/player_base.gd" id="6_hh44o"]
+[ext_resource type="Script" uid="uid://drab5knjerfuu" path="res://scripts/wave_controller.gd" id="7_gx4nb"]
+[ext_resource type="Script" uid="uid://7m1ihpejjij3" path="res://scripts/chapter_definition.gd" id="8_5ejud"]
+[ext_resource type="Script" uid="uid://cu6tgqobfmyv3" path="res://scripts/wave_definition.gd" id="9_hrqpd"]
+[ext_resource type="Script" uid="uid://dvu35hndufrrb" path="res://scripts/wave_entry.gd" id="10_d3oru"]
+[ext_resource type="Script" uid="uid://c173vbo7ef2yb" path="res://scripts/map_config.gd" id="11_trtvt"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_hud.tscn" id="12_gameh"]
 
 [sub_resource type="Curve2D" id="Curve2D_s00no"]
 _data = {
@@ -84,39 +85,7 @@ curve = SubResource("Curve2D_s00no")
 [node name="HeroBoard" type="Node" parent="." unique_id=509699560]
 script = ExtResource("5_ugey6")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=403992605]
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD" unique_id=1575513402]
-offset_left = 1408.0
-offset_top = 16.0
-offset_right = 1914.0
-offset_bottom = 128.0
-
-[node name="PlacedLabel" type="Label" parent="HUD/VBoxContainer" unique_id=2121961075]
-layout_mode = 2
-text = "Placed: 0 / 0 slots"
-label_settings = SubResource("LabelSettings_s00no")
-
-[node name="HintLabel" type="Label" parent="HUD/VBoxContainer" unique_id=1458824838]
-layout_mode = 2
-text = "Click a green slot to place a hero. Click a placed hero to remove it."
-label_settings = SubResource("LabelSettings_73eq5")
-
-[node name="BaseHPLabel" type="Label" parent="HUD/VBoxContainer" unique_id=1809069349]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_trtvt")
-
-[node name="Button" type="Button" parent="HUD/VBoxContainer" unique_id=865324987]
-layout_mode = 2
-text = "Start Wave"
-
-[node name="WavePreviewLabel" type="Label" parent="HUD/VBoxContainer" unique_id=619852747]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_wvgw8")
-
-[node name="RelicLabel" type="Label" parent="HUD/VBoxContainer" unique_id=109771619]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_ugey6")
+[node name="GameHUD" parent="." instance=ExtResource("12_gameh")]
 
 [node name="PlayerBase" type="Node" parent="." unique_id=651402560]
 script = ExtResource("6_hh44o")
@@ -193,4 +162,4 @@ scene_path = "res://scenes/enemies/skeleton/skeleton_bonelord.tscn"
 [node name="MapConfig" type="Node" parent="." unique_id=1536236516]
 script = ExtResource("11_trtvt")
 
-[connection signal="pressed" from="HUD/VBoxContainer/Button" to="." method="_on_spawn_button_pressed"]
+[connection signal="spawn_wave_requested" from="GameHUD" to="." method="_on_spawn_button_pressed"]
