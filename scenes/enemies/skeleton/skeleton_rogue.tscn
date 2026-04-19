@@ -189,14 +189,12 @@ animations = [{
 [node name="SkeletonRogue" type="Node2D" unique_id=2031847563]
 script = ExtResource("1")
 max_hp = 40
-armor = 0.0
 weaknesses = 12
 resistances = 3
 gold_reward = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1754302819]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_skeletonrogue")
 animation = &"run_4"
 autoplay = "run_1"
@@ -204,4 +202,4 @@ frame_progress = 0.020550942
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=983416277]
 script = ExtResource("2")
-speed = 100.0
+speed = 50.0

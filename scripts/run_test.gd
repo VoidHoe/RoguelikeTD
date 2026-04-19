@@ -69,6 +69,7 @@ var _shop_discount: int = 0   # réduction appliquée au prochain achat (event M
 
 var _shop_panel: ShopPanel = null
 var _draft_screen: DraftScreen = null
+var _challenge_tracker: ChallengeTracker = ChallengeTracker.new()
 
 # ─── setup ───────────────────────────────────────────────────────────────────
 func _ready() -> void:
@@ -86,7 +87,13 @@ func _ready() -> void:
 	_wave_controller.all_waves_cleared.connect(_on_all_waves_cleared)
 	_wave_controller.enemy_spawned.connect(func(enemy: EnemyBase) -> void:
 		enemy.reached_base.connect(func() -> void: player_base.take_damage(1))
-		enemy.died.connect(func() -> void: player_base.add_gold(enemy.gold_reward))
+		enemy.died.connect(func() -> void:
+			player_base.add_gold(enemy.gold_reward)
+			_challenge_tracker.record_kill(enemy.last_dmg_type)
+		)
+		enemy.damage_taken.connect(func(amt: int, typ: int) -> void:
+			_challenge_tracker.record_damage(amt, typ)
+		)
 	)
 
 	var children := slot_markers.get_children()
@@ -376,6 +383,9 @@ func _update_hud() -> void:
 	_shop_panel.refresh(player_base.gold, _is_wave_active)
 
 # ─── score & sauvegarde ───────────────────────────────────────────────────────
+func _calculate_gems(is_victory: bool) -> int:
+	return _wave_controller.get_current_wave() * 5 + (50 if is_victory else 0)
+
 func _calculate_score(is_victory: bool) -> int:
 	var waves_cleared := _wave_controller.get_current_wave()
 	var score := waves_cleared * 100
@@ -398,6 +408,8 @@ func _show_run_end(is_victory: bool) -> void:
 
 	# ── Calcul du score et mise à jour de la sauvegarde ──
 	var score := _calculate_score(is_victory)
+	var gems_earned := _calculate_gems(is_victory)
+
 	var save := SaveManager.load_data()
 	save["total_runs"] = save.get("total_runs", 0) + 1
 	if is_victory:
@@ -407,6 +419,15 @@ func _show_run_end(is_victory: bool) -> void:
 	if is_new_record:
 		save["best_score"] = score
 	SaveManager.save_data(save)
+
+	# ── Gems + challenge progress ──
+	SaveManager.add_gems(gems_earned)
+	SaveManager.update_challenge_progress(_challenge_tracker.get_lifetime_delta())
+	var save_post := SaveManager.load_data()
+	var newly_unlocked := _challenge_tracker.evaluate_challenges(save_post)
+	for hero_name in newly_unlocked:
+		SaveManager.set_hero_unlocked(hero_name, true)
+	var total_gems := SaveManager.get_gems()
 
 	var vp := get_viewport().get_visible_rect().size
 
@@ -459,6 +480,9 @@ func _show_run_end(is_victory: bool) -> void:
 		summary_lines.append("Vague atteinte : %d / %d" % [wave_cur, wave_tot])
 	summary_lines.append("")
 	summary_lines.append("Runs joués : %d    Victoires : %d" % [save["total_runs"], save["total_wins"]])
+	summary_lines.append("💎  +%d gemmes  (total : %d)" % [gems_earned, total_gems])
+	if not newly_unlocked.is_empty():
+		summary_lines.append("🔓  Nouveau héros disponible : %s" % "  ·  ".join(newly_unlocked))
 
 	var summary := Label.new()
 	summary.position = Vector2(0.0, vp.y * 0.60)

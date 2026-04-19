@@ -1,43 +1,43 @@
-[gd_scene format=3 uid="uid://skeleton_warrior_01"]
+[gd_scene format=3 uid="uid://cw34bgfkqxcl7"]
 
-[ext_resource type="Script" path="res://scripts/enemy_base.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/speed_component.gd" id="2"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame00.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame01.png" id="4"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame02.png" id="5"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame03.png" id="6"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame04.png" id="7"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame05.png" id="8"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame06.png" id="9"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame07.png" id="10"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame08.png" id="11"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame00.png" id="12"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame01.png" id="13"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame02.png" id="14"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame03.png" id="15"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame04.png" id="16"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame05.png" id="17"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame06.png" id="18"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame07.png" id="19"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame08.png" id="20"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame00.png" id="21"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame01.png" id="22"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame02.png" id="23"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame03.png" id="24"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame04.png" id="25"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame05.png" id="26"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame06.png" id="27"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame07.png" id="28"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame08.png" id="29"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame00.png" id="30"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame01.png" id="31"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame02.png" id="32"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame03.png" id="33"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame04.png" id="34"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame05.png" id="35"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame06.png" id="36"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame07.png" id="37"]
-[ext_resource type="Texture2D" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame08.png" id="38"]
+[ext_resource type="Script" uid="uid://c0bvea3d5f4km" path="res://scripts/enemy_base.gd" id="1"]
+[ext_resource type="Script" uid="uid://i0x15w1c3x53" path="res://scripts/speed_component.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dho83dnewcy4w" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame00.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://qljkcwe68w71" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame01.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cu1vya52h30hh" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame02.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bmaxbexyeln0w" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame03.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c3cjyrec16vvo" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame04.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://d11ic68ni8325" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bkiu5fky6cdcj" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame06.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bf40g7ylg2vjo" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame07.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dnyfryrvmxmkl" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NE/walk_north-east_frame08.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b1cg5ipyxdqj8" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame00.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bcgo2opc1v8pn" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame01.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cydnkcgffy0pt" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame02.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://d0hm81g34bx1f" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame03.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://c4ca7jfupbx3i" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame04.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://b7c2yyretscbf" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame05.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b7wy72wprswin" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame06.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bmhjsj3rbnrt4" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame07.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://vljyitbbkbh3" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SE/walk_south-east_frame08.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://ceemd2eg2ue7m" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame00.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dni6yafjonnd2" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame01.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://ish6kt542tmi" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame02.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://bn0wum7drba21" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame03.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://d3qy1yg3mhbw6" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame04.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://6ijsxcigabjg" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame05.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://dkidscmlk07px" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame06.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://fyav1dftyktj" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame07.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://basfoc83x4yp4" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/SW/walk_south-west_frame08.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://c1w0l8qbjc4co" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame00.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cil0qerf6qbte" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame01.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bitq345u75mbo" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame02.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://cmvrftvu31ovj" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame03.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://chg3wp8gwbahe" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame04.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://b7l7j46y44sbv" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame05.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://h784c8mujfy" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame06.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://d1d5nmpd7j3ge" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame07.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://c2qcoy1dy11ig" path="res://assets/characters/enemies/skeleton/warrior_iso/animations/walk/NW/walk_north-west_frame08.png" id="38"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_skwrr"]
 animations = [{
@@ -173,18 +173,15 @@ animations = [{
 [node name="SkeletonWarrior" type="Node2D" unique_id=572839104]
 script = ExtResource("1")
 max_hp = 60
-armor = 0.0
 weaknesses = 12
 resistances = 3
-gold_reward = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=394817265]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_skwrr")
 animation = &"run_4"
 autoplay = "run_1"
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=718263049]
 script = ExtResource("2")
-speed = 65.0
+speed = 33.0

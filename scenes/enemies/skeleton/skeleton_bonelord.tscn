@@ -189,18 +189,17 @@ animations = [{
 [node name="SkeletonBonelord" type="Node2D" unique_id=2047381923]
 script = ExtResource("1_al0y4")
 max_hp = 500
-armor = 0.20
+armor = 0.2
 weaknesses = 12
 resistances = 3
 gold_reward = 80
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1762054388]
-position = Vector2(0, -64)
-scale = Vector2(2, 2)
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_bonelord")
 animation = &"run_2"
 autoplay = "run_1"
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=938471625]
 script = ExtResource("42_iqg60")
-speed = 30.0
+speed = 15.0

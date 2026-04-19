@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b7jkumxhgvxmc"]
 
-[node name="Slot" type="Node2D"]
+[node name="Slot" type="Node2D" unique_id=439568949]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=975645784]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0, -64, 128, 0, 0, 64, -128, 0)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=129390687]
+polygon = PackedVector2Array(0, -16, 32, 0, 0, 16, -32, 0)

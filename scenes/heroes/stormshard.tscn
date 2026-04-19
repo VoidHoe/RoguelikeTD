@@ -336,7 +336,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("73_rmpxs")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_W",
 "speed": 9.0
 }, {
@@ -411,11 +411,11 @@ hero_name = "Stormshard"
 cost = 55
 damage_type = 4
 attack_damage = 12
-attack_radius = 200.0
+attack_radius = 100.0
 attack_speed = 1.1
+is_ranged = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298841613]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_qpgfh")
 animation = &"attack_E"

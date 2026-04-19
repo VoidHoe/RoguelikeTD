@@ -411,10 +411,9 @@ hero_name = "Pyromancer"
 cost = 65
 damage_type = 2
 attack_damage = 15
-attack_radius = 220.0
+is_ranged = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=332941380]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_h6oha")
 animation = &"idle_W"

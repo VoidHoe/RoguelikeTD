@@ -408,14 +408,12 @@ animations = [{
 [node name="Bladedancer" type="Node2D" unique_id=621501332]
 script = ExtResource("1")
 hero_name = "Bladedancer"
-cost = 50
 damage_type = 0
 attack_damage = 8
-attack_radius = 180.0
+attack_radius = 90.0
 attack_speed = 1.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7189569]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_m6np7")
 animation = &"attack_W"

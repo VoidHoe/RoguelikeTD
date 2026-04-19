@@ -6,11 +6,11 @@ Ce document définit les règles de calcul pour le design des héros, la progres
 
 ## Conversion Pixels / Mètres
 
-**1 mètre = 100 pixels**
+**1 mètre = 50 pixels** *(mis à jour Step 8 — tile 64×32px, échelle ÷2)*
 
-La tile isométrique fait 256×128px. La distance minimale entre un héro posé
-adjacent au chemin et un ennemi sur le chemin est ~143px (≈1.43m).
-Toute portée inférieure à 150px rend le héro inutilisable.
+La tile isométrique fait 64×32px. La distance minimale entre un héro posé
+adjacent au chemin et un ennemi sur le chemin est ~72px (≈1.44m).
+Toute portée inférieure à **75px** rend le héro inutilisable.
 
 ---
 
@@ -46,16 +46,16 @@ $$D_{final} = (D_{base} \times M_{type}) \times (1 - R_{armor})$$
 
 ## 3. Héros Niveau 1 — Valeurs Actuelles (Godot)
 
-> ⚠️ **Map redessinée (Step 8)** — Le chemin a changé de layout. Les portées en pixels
-> ci-dessous sont à revalider en jeu : un héros adjacent au chemin doit couvrir au moins
-> 1 tuile de chaque côté. La règle minimale (portée > 150px) reste valide car TILE_SIZE
-> est toujours 256×128. Ajuste `attack_radius` dans l'Inspecteur de chaque scène héros.
+> ℹ️ **Tile ÷2 (Step 8)** — TILE_SIZE est passé à 64×32px (scale=1.0). Toutes les portées
+> ont été divisées par 2 pour conserver le même ressenti en tuiles. La règle minimale
+> est maintenant **portée > 75px**. Vitesse ennemis conseillée : 40px/s (= 0.625 tuile/s).
+> Ajuste `attack_radius` dans l'Inspecteur de chaque scène héros si besoin.
 
-| Héros        | Type       | Dégâts | Portée px (à vérifier) | Vitesse | Budget Total |
-| :---         | :---       | :---   | :---                   | :---    | :---         |
-| Bladedancer  | Tranchant  | 8      | 180px (1.8m) ⚠️        | 1.2     | 40+14+40 = **94 pts** |
-| Pyromancer   | Feu        | 15     | 220px (2.2m) ⚠️        | 1.0     | 75+18+0  = **93 pts** |
-| Stormshard   | Électrique | 12     | 200px (2.0m) ⚠️        | 1.1     | 60+16+20 = **96 pts** |
+| Héros        | Type       | Dégâts | Portée px  | Portée m | Vitesse | Budget Total |
+| :---         | :---       | :---   | :---       | :---     | :---    | :---         |
+| Bladedancer  | Tranchant  | 8      | **90px**   | 1.8m     | 1.2     | 40+14+40 = **94 pts** |
+| Pyromancer   | Feu        | 15     | **110px**  | 2.2m     | 1.0     | 75+18+0  = **93 pts** |
+| Stormshard   | Électrique | 12     | **100px**  | 2.0m     | 1.1     | 60+16+20 = **96 pts** |
 
 ### Détail du Calcul par Héros
 

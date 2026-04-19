@@ -199,12 +199,11 @@ resistances = 3
 gold_reward = 25
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2012449397]
-position = Vector2(0, -48)
-scale = Vector2(2, 2)
+position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_1")
 animation = &"run_4"
 autoplay = "run_1"
 
 [node name="SpeedComponent" type="Node" parent="." unique_id=642450423]
 script = ExtResource("2")
-speed = 50.0
+speed = 25.0
