@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://ckg3rr8egc1ct"]
+
+[ext_resource type="Script" uid="uid://c0bvea3d5f4km" path="res://scripts/enemy_base.gd" id="1"]
+[ext_resource type="Script" uid="uid://i0x15w1c3x53" path="res://scripts/speed_component.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dm54pjqjbdjhb" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame00.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://41ecbpcmpyh0" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame01.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dhfqrsqfjfw2t" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame02.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d3amwo460vjrc" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame03.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b112o4y5fmw2s" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame04.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bbhm0oae7cwk4" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bi2h4lcxka1rp" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame06.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dykexrg7dyjhx" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame07.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://xlp1r4jnqx8y" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame08.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://kejm7bpldyvh" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame09.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://4d1shiatokg3" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-east_frame10.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://ddx7nvj0egq6m" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame00.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bpdihjrldb4pe" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame01.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://b2agjlgg8h6pc" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame02.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bjkh0me1weei1" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame03.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ctsn8j7ct3agb" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame04.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://ceq36725jxlb8" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame05.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://whj7e23d0au6" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame06.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dcu6oaxsmoaar" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame07.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cg5p0vouxagmt" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame08.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://brsrp7ma0jqny" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-east_frame09.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://bmld2ddh3damk" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame00.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://c5a3en1cqgkl5" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame01.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://dyrtnimibyghx" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame02.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://dt6javv4u5wkt" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame03.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cl0r2djnoocbi" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame04.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bswydccaqk784" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame05.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://d2x5otgrgt8pk" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame06.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bekblk14ry5yi" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame07.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bvqcqguobkvii" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame08.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://bq15lcshghke5" path="res://assets/characters/enemies/skeleton/knight_iso/walk_south-west_frame09.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bw7p0f2iar257" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame00.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://cie3cooupngg6" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame01.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://cc622tx01xgci" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame02.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://b0jooomqepx8e" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame03.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://c4elev0cui5js" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame04.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://dmbs5tuvj1bbp" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame05.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://c1ep15not55at" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame06.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://yf81x2jd2wrg" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame07.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://ced2mofaabdjd" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame08.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://dekk7egm7tlvo" path="res://assets/characters/enemies/skeleton/knight_iso/walk_north-west_frame09.png" id="45"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"run_1",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}],
+"loop": true,
+"name": &"run_2",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
+"loop": true,
+"name": &"run_3",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}],
+"loop": true,
+"name": &"run_4",
+"speed": 9.0
+}]
+
+[node name="SkeletonKnight" type="Node2D" unique_id=1557125817]
+script = ExtResource("1")
+max_hp = 180
+armor = 0.15
+weaknesses = 12
+resistances = 3
+gold_reward = 25
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2012449397]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1")
+animation = &"run_4"
+autoplay = "run_1"
+
+[node name="SpeedComponent" type="Node" parent="." unique_id=642450423]
+script = ExtResource("2")
+speed = 50.0

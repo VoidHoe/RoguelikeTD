@@ -1,19 +1,27 @@
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
-; but it can be modified here for quick tweaks.
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
 config/name="RoguelikeTD"
-config/features=PackedStringArray("4.4", "Forward Plus")
-run/main_scene="res://scenes/run_test.tscn"
+run/main_scene="res://scenes/maps/run_test.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
@@ -21,4 +29,4 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [rendering]
 
-renderer/rendering_method="forward_plus"
+textures/canvas_textures/default_texture_filter=0

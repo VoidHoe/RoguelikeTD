@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://d20omrmuriddi"]
+
+[ext_resource type="Script" uid="uid://dcnkbgkc57fjc" path="res://scripts/hero_base.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cu68iek8ghd5q" path="res://assets/characters/heroes/pyromancer/rotation_south-east.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d12vl657yy82l" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame00.png" id="2_7jr5o"]
+[ext_resource type="Texture2D" uid="uid://xtawmpgmnddk" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame01.png" id="3_2tt6j"]
+[ext_resource type="Texture2D" uid="uid://7x3bjnfsm3nq" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame02.png" id="4_lwblu"]
+[ext_resource type="Texture2D" uid="uid://b85367pw5l6w6" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame03.png" id="5_yeilu"]
+[ext_resource type="Texture2D" uid="uid://e728fcpo6v0y" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame04.png" id="6_c03mv"]
+[ext_resource type="Texture2D" uid="uid://cmk6xl2v35t7b" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame05.png" id="7_jddbq"]
+[ext_resource type="Texture2D" uid="uid://b3o5reiv5gna2" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame06.png" id="8_ji4s3"]
+[ext_resource type="Texture2D" uid="uid://dmvhex1tbir3c" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame07.png" id="9_vj158"]
+[ext_resource type="Texture2D" uid="uid://mqwud3n26gb2" path="res://assets/characters/heroes/pyromancer/animation/attack/E/attack_east_frame08.png" id="10_d2g1t"]
+[ext_resource type="Texture2D" uid="uid://dnqat1lk06cui" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame00.png" id="11_okvr2"]
+[ext_resource type="Texture2D" uid="uid://bq8473rnuro36" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame01.png" id="12_xt6p8"]
+[ext_resource type="Texture2D" uid="uid://dyu6l5ss226hd" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame02.png" id="13_snmb4"]
+[ext_resource type="Texture2D" uid="uid://cm2q51d7hn6ct" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame03.png" id="14_xfkn6"]
+[ext_resource type="Texture2D" uid="uid://i7nu0gmikw3f" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame04.png" id="15_1q5sf"]
+[ext_resource type="Texture2D" uid="uid://bxrv6ckjr6beh" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame05.png" id="16_ie0vb"]
+[ext_resource type="Texture2D" uid="uid://daj82unldlwat" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame06.png" id="17_e0y1t"]
+[ext_resource type="Texture2D" uid="uid://gtra4utgdq50" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame07.png" id="18_avsbs"]
+[ext_resource type="Texture2D" uid="uid://bfaeamos6n0rf" path="res://assets/characters/heroes/pyromancer/animation/attack/N/attack_north_frame08.png" id="19_jbrrv"]
+[ext_resource type="Texture2D" uid="uid://f6dmnej7drot" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame00.png" id="20_j1f4j"]
+[ext_resource type="Texture2D" uid="uid://vv52uqxc7jao" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame01.png" id="21_8438u"]
+[ext_resource type="Texture2D" uid="uid://dhwb8xrrw0b8y" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame02.png" id="22_r6ks0"]
+[ext_resource type="Texture2D" uid="uid://cul3t7nxklp12" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame03.png" id="23_jf10o"]
+[ext_resource type="Texture2D" uid="uid://c38wcdc4ag8nq" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame04.png" id="24_djvby"]
+[ext_resource type="Texture2D" uid="uid://dxdiy0kbhmadj" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame05.png" id="25_anghi"]
+[ext_resource type="Texture2D" uid="uid://byqwjrbmtncuq" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame06.png" id="26_fk2on"]
+[ext_resource type="Texture2D" uid="uid://ddg6x38iefj6u" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame07.png" id="27_xcey1"]
+[ext_resource type="Texture2D" uid="uid://jvs4ulxopngl" path="res://assets/characters/heroes/pyromancer/animation/attack/NE/attack_north-east_frame08.png" id="28_0jlij"]
+[ext_resource type="Texture2D" uid="uid://6uflabarfo1a" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame00.png" id="29_okmap"]
+[ext_resource type="Texture2D" uid="uid://8ssgdj22kyc5" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame01.png" id="30_k5jjj"]
+[ext_resource type="Texture2D" uid="uid://03x46dr3c7v4" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame02.png" id="31_uma26"]
+[ext_resource type="Texture2D" uid="uid://okmy0yn6e1sa" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame03.png" id="32_kipeo"]
+[ext_resource type="Texture2D" uid="uid://b1my3lxe8o3yu" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame04.png" id="33_xyh6u"]
+[ext_resource type="Texture2D" uid="uid://c7c0ulflo0gak" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame05.png" id="34_86adw"]
+[ext_resource type="Texture2D" uid="uid://c38cn40xxqhbm" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame06.png" id="35_vfco3"]
+[ext_resource type="Texture2D" uid="uid://dbfyl6s8ttost" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame07.png" id="36_ddo4c"]
+[ext_resource type="Texture2D" uid="uid://co604og8bcjis" path="res://assets/characters/heroes/pyromancer/animation/attack/NW/attack_north-west_frame08.png" id="37_3v672"]
+[ext_resource type="Texture2D" uid="uid://r1hjyk1r6h2h" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame00.png" id="38_dweis"]
+[ext_resource type="Texture2D" uid="uid://cpop0if8vfgmh" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame01.png" id="39_ac0ak"]
+[ext_resource type="Texture2D" uid="uid://b2pg3ap3hur26" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame02.png" id="40_0t4mr"]
+[ext_resource type="Texture2D" uid="uid://bcnwkqqx4msw0" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame03.png" id="41_1jgu2"]
+[ext_resource type="Texture2D" uid="uid://cnyqc64nngvgg" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame04.png" id="42_il68x"]
+[ext_resource type="Texture2D" uid="uid://b7lasbeepkpyr" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame05.png" id="43_5tsvo"]
+[ext_resource type="Texture2D" uid="uid://buf5jtb5w8iju" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame06.png" id="44_ja061"]
+[ext_resource type="Texture2D" uid="uid://bhdmtaveui36y" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame07.png" id="45_mwpc6"]
+[ext_resource type="Texture2D" uid="uid://2j1agqadjo1x" path="res://assets/characters/heroes/pyromancer/animation/attack/S/attack_south_frame08.png" id="46_vb0ty"]
+[ext_resource type="Texture2D" uid="uid://3es5o0cvuws" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame00.png" id="47_lnony"]
+[ext_resource type="Texture2D" uid="uid://cy4f30ut5pq14" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame01.png" id="48_ekmck"]
+[ext_resource type="Texture2D" uid="uid://bcgfobf28dfc2" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame02.png" id="49_f67ni"]
+[ext_resource type="Texture2D" uid="uid://dy60sodjk715p" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame03.png" id="50_b5do7"]
+[ext_resource type="Texture2D" uid="uid://cwo85cc6p8rx6" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame04.png" id="51_hrglb"]
+[ext_resource type="Texture2D" uid="uid://dnfur2vh2ae20" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame05.png" id="52_ji62w"]
+[ext_resource type="Texture2D" uid="uid://d0srpi6ri0k4n" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame06.png" id="53_ke2ud"]
+[ext_resource type="Texture2D" uid="uid://c4pv6p0kwfg83" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame07.png" id="54_y03hp"]
+[ext_resource type="Texture2D" uid="uid://buwe5qqvk27j0" path="res://assets/characters/heroes/pyromancer/animation/attack/SE/attack_south-east_frame08.png" id="55_msk0o"]
+[ext_resource type="Texture2D" uid="uid://poejj1swfmu3" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame00.png" id="56_retcd"]
+[ext_resource type="Texture2D" uid="uid://ddnf3063hcmp7" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame01.png" id="57_t5t5b"]
+[ext_resource type="Texture2D" uid="uid://bhgwuqv5fpexv" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame02.png" id="58_nfubp"]
+[ext_resource type="Texture2D" uid="uid://bhrdar6p4iky7" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame03.png" id="59_wkhy8"]
+[ext_resource type="Texture2D" uid="uid://ctcstb6hukau3" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame04.png" id="60_lo264"]
+[ext_resource type="Texture2D" uid="uid://vqmg6eeryiyn" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame05.png" id="61_3gwnn"]
+[ext_resource type="Texture2D" uid="uid://3xfbtahp8q00" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame06.png" id="62_q0jpk"]
+[ext_resource type="Texture2D" uid="uid://d33uxn4kb1l4g" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame07.png" id="63_2egfx"]
+[ext_resource type="Texture2D" uid="uid://b47l40aa0hr0n" path="res://assets/characters/heroes/pyromancer/animation/attack/SW/attack_south-west_frame08.png" id="64_40jxn"]
+[ext_resource type="Texture2D" uid="uid://buqyn37pd0d01" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame00.png" id="65_fop38"]
+[ext_resource type="Texture2D" uid="uid://bdv8wx0m065s6" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame01.png" id="66_8o8jg"]
+[ext_resource type="Texture2D" uid="uid://b2qy7ud1fw6km" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame02.png" id="67_okxr5"]
+[ext_resource type="Texture2D" uid="uid://b84rfxcymmm6j" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame03.png" id="68_32bhl"]
+[ext_resource type="Texture2D" uid="uid://crfqq1mlsucdk" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame04.png" id="69_mulk5"]
+[ext_resource type="Texture2D" uid="uid://dejamntg83wpj" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame05.png" id="70_w3gl6"]
+[ext_resource type="Texture2D" uid="uid://d3ypgq256gts2" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame06.png" id="71_vu3bw"]
+[ext_resource type="Texture2D" uid="uid://bmn36v5aorr1r" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame07.png" id="72_gwu4m"]
+[ext_resource type="Texture2D" uid="uid://b2t2xfqkilgq5" path="res://assets/characters/heroes/pyromancer/animation/attack/W/attack_west_frame08.png" id="73_v7sy6"]
+[ext_resource type="Texture2D" uid="uid://dpdb1bitou70d" path="res://assets/characters/heroes/pyromancer/rotation_east.png" id="74_vj158"]
+[ext_resource type="Texture2D" uid="uid://wcea562c0xqb" path="res://assets/characters/heroes/pyromancer/rotation_north.png" id="75_d2g1t"]
+[ext_resource type="Texture2D" uid="uid://cdhdlwwrxf4f" path="res://assets/characters/heroes/pyromancer/rotation_north-east.png" id="76_okvr2"]
+[ext_resource type="Texture2D" uid="uid://dly7n4wiwx54p" path="res://assets/characters/heroes/pyromancer/rotation_north-west.png" id="77_xt6p8"]
+[ext_resource type="Texture2D" uid="uid://tfh7q0vkipc6" path="res://assets/characters/heroes/pyromancer/rotation_south.png" id="78_snmb4"]
+[ext_resource type="Texture2D" uid="uid://dkasleqd406a3" path="res://assets/characters/heroes/pyromancer/rotation_south-west.png" id="80_xfkn6"]
+[ext_resource type="Texture2D" uid="uid://b14n71h75258w" path="res://assets/characters/heroes/pyromancer/rotation_west.png" id="81_1q5sf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6oha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7jr5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tt6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lwblu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yeilu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c03mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jddbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ji4s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vj158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d2g1t")
+}],
+"loop": false,
+"name": &"attack_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_okvr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xt6p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_snmb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xfkn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1q5sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ie0vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e0y1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_avsbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jbrrv")
+}],
+"loop": false,
+"name": &"attack_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_j1f4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8438u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_r6ks0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jf10o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_djvby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_anghi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fk2on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xcey1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0jlij")
+}],
+"loop": false,
+"name": &"attack_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_okmap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_k5jjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uma26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kipeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xyh6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_86adw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vfco3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ddo4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3v672")
+}],
+"loop": false,
+"name": &"attack_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_dweis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ac0ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_0t4mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1jgu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_il68x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5tsvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ja061")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mwpc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vb0ty")
+}],
+"loop": false,
+"name": &"attack_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_lnony")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ekmck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f67ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_b5do7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_hrglb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ji62w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ke2ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_y03hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_msk0o")
+}],
+"loop": false,
+"name": &"attack_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_retcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_t5t5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_nfubp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wkhy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_lo264")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_3gwnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_q0jpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_2egfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_40jxn")
+}],
+"loop": false,
+"name": &"attack_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_fop38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_8o8jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_okxr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_32bhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_mulk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_w3gl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_vu3bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_gwu4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_v7sy6")
+}],
+"loop": false,
+"name": &"attack_W",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_vj158")
+}],
+"loop": false,
+"name": &"idle_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_d2g1t")
+}],
+"loop": false,
+"name": &"idle_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_okvr2")
+}],
+"loop": false,
+"name": &"idle_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_xt6p8")
+}],
+"loop": false,
+"name": &"idle_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78_snmb4")
+}],
+"loop": false,
+"name": &"idle_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": false,
+"name": &"idle_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_xfkn6")
+}],
+"loop": false,
+"name": &"idle_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_1q5sf")
+}],
+"loop": false,
+"name": &"idle_W",
+"speed": 9.0
+}]
+
+[node name="Pyromancer" type="Node2D" unique_id=1573508265]
+script = ExtResource("1")
+hero_name = "Pyromancer"
+cost = 65
+damage_type = 2
+attack_damage = 15
+attack_radius = 220.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=332941380]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_h6oha")
+animation = &"idle_W"

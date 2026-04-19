@@ -1,0 +1,421 @@
+[gd_scene format=3 uid="uid://dfbj2hf107ggu"]
+
+[ext_resource type="Script" uid="uid://dcnkbgkc57fjc" path="res://scripts/hero_base.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bnodubiy6cjxt" path="res://assets/characters/heroes/bladedancer/rotation_south-east.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cn878qtvrlh4r" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame00.png" id="2_0xkxi"]
+[ext_resource type="Texture2D" uid="uid://yjmgu6688xi2" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame01.png" id="3_q8j48"]
+[ext_resource type="Texture2D" uid="uid://vqlacmybd684" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame02.png" id="4_ai6g8"]
+[ext_resource type="Texture2D" uid="uid://bewancis01u04" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame03.png" id="5_yiing"]
+[ext_resource type="Texture2D" uid="uid://cjcuqjlwee6sr" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame04.png" id="6_ohwtc"]
+[ext_resource type="Texture2D" uid="uid://c00glfeusf3k6" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame05.png" id="7_m3d4b"]
+[ext_resource type="Texture2D" uid="uid://bsvkghle1heg6" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame06.png" id="8_4yh1t"]
+[ext_resource type="Texture2D" uid="uid://bvl8qrfkpous4" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame07.png" id="9_vccwm"]
+[ext_resource type="Texture2D" uid="uid://bkj55xg77wf8f" path="res://assets/characters/heroes/bladedancer/animation/attack/E/attack_east_frame08.png" id="10_qg8wx"]
+[ext_resource type="Texture2D" uid="uid://wgvqjnia11ac" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame00.png" id="11_gkiti"]
+[ext_resource type="Texture2D" uid="uid://dh2ayki7hw3t2" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame01.png" id="12_bq3q3"]
+[ext_resource type="Texture2D" uid="uid://nfw8oxkpn2ep" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame02.png" id="13_jjl56"]
+[ext_resource type="Texture2D" uid="uid://bwd0hhtgn223y" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame03.png" id="14_grhwo"]
+[ext_resource type="Texture2D" uid="uid://bwmj84meiko5d" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame04.png" id="15_yft2c"]
+[ext_resource type="Texture2D" uid="uid://e4hivlhjc23b" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame05.png" id="16_ylhla"]
+[ext_resource type="Texture2D" uid="uid://eax3ufhcgrjp" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame06.png" id="17_uvrx3"]
+[ext_resource type="Texture2D" uid="uid://byvtap0dod7my" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame07.png" id="18_eyp7k"]
+[ext_resource type="Texture2D" uid="uid://r4i1pll05jck" path="res://assets/characters/heroes/bladedancer/animation/attack/N/attack_north_frame08.png" id="19_4ipum"]
+[ext_resource type="Texture2D" uid="uid://dkjsqr7lvxugw" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame00.png" id="20_8ykig"]
+[ext_resource type="Texture2D" uid="uid://df4pr17kqqvvs" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame01.png" id="21_2i4lm"]
+[ext_resource type="Texture2D" uid="uid://wgm15bwbbelj" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame02.png" id="22_ljeuc"]
+[ext_resource type="Texture2D" uid="uid://de8dwduhwnjqf" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame03.png" id="23_2wwj7"]
+[ext_resource type="Texture2D" uid="uid://cddn4adjidam8" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame04.png" id="24_t00kq"]
+[ext_resource type="Texture2D" uid="uid://bso5gicg8h1me" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame05.png" id="25_p0c1v"]
+[ext_resource type="Texture2D" uid="uid://cv60yek0bohqj" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame06.png" id="26_j7pn2"]
+[ext_resource type="Texture2D" uid="uid://bbog0mmdn1eu1" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame07.png" id="27_623b7"]
+[ext_resource type="Texture2D" uid="uid://cuattl8ua1tbh" path="res://assets/characters/heroes/bladedancer/animation/attack/NE/attack_north-east_frame08.png" id="28_e4nev"]
+[ext_resource type="Texture2D" uid="uid://i2eab3csav4o" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame00.png" id="29_ojuvm"]
+[ext_resource type="Texture2D" uid="uid://btq7ofxh0jdbo" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame01.png" id="30_gam8l"]
+[ext_resource type="Texture2D" uid="uid://dlr4jgsbaih6f" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame02.png" id="31_xr58x"]
+[ext_resource type="Texture2D" uid="uid://b7v5640thkvf4" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame03.png" id="32_n8s73"]
+[ext_resource type="Texture2D" uid="uid://dqmgq8of7npd8" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame04.png" id="33_a003w"]
+[ext_resource type="Texture2D" uid="uid://do8n6ljrg0eoo" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame05.png" id="34_wyg8j"]
+[ext_resource type="Texture2D" uid="uid://bvbwy2oyhwhuh" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame06.png" id="35_1l0vm"]
+[ext_resource type="Texture2D" uid="uid://cc1p8b1xxdl5b" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame07.png" id="36_jn868"]
+[ext_resource type="Texture2D" uid="uid://dfa008h3kljch" path="res://assets/characters/heroes/bladedancer/animation/attack/NW/attack_north-west_frame08.png" id="37_8aca5"]
+[ext_resource type="Texture2D" uid="uid://c21tnqcx1t17a" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame00.png" id="38_q5d0m"]
+[ext_resource type="Texture2D" uid="uid://b8m04q64wy5jk" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame01.png" id="39_ndxg4"]
+[ext_resource type="Texture2D" uid="uid://cc1ia8tmwvkv6" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame02.png" id="40_220q0"]
+[ext_resource type="Texture2D" uid="uid://de54suqdroku8" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame03.png" id="41_tqw2y"]
+[ext_resource type="Texture2D" uid="uid://dbndgvb63fxi1" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame04.png" id="42_oy2cg"]
+[ext_resource type="Texture2D" uid="uid://mq7ojgy0hs7t" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame05.png" id="43_bo74o"]
+[ext_resource type="Texture2D" uid="uid://bvq6og71twp40" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame06.png" id="44_3g82b"]
+[ext_resource type="Texture2D" uid="uid://cw6bw30x7rvya" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame07.png" id="45_o4kik"]
+[ext_resource type="Texture2D" uid="uid://dhxkuptxwr0fr" path="res://assets/characters/heroes/bladedancer/animation/attack/S/attack_south_frame08.png" id="46_2t4et"]
+[ext_resource type="Texture2D" uid="uid://brcyofqddhqby" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame00.png" id="47_clsvs"]
+[ext_resource type="Texture2D" uid="uid://dchc47cnix6ak" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame01.png" id="48_hvfkv"]
+[ext_resource type="Texture2D" uid="uid://cc7imxgmfymt2" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame02.png" id="49_txgnh"]
+[ext_resource type="Texture2D" uid="uid://bnxamhtjvei6y" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame03.png" id="50_lke5o"]
+[ext_resource type="Texture2D" uid="uid://dqwopf3pgrswb" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame04.png" id="51_8kyds"]
+[ext_resource type="Texture2D" uid="uid://bd2yli51n1f27" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame05.png" id="52_ae2h1"]
+[ext_resource type="Texture2D" uid="uid://hx30fmogbkyx" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame06.png" id="53_vx4wy"]
+[ext_resource type="Texture2D" uid="uid://bbqstdqsi3mwo" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame07.png" id="54_eiu3y"]
+[ext_resource type="Texture2D" uid="uid://di8urskof7vpf" path="res://assets/characters/heroes/bladedancer/animation/attack/SE/attack_south-east_frame08.png" id="55_8pfxv"]
+[ext_resource type="Texture2D" uid="uid://cnl3kfqceoep8" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame00.png" id="56_8dhqo"]
+[ext_resource type="Texture2D" uid="uid://by5ifn45xnuc0" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame01.png" id="57_ja7x8"]
+[ext_resource type="Texture2D" uid="uid://bpt6jgi06p07t" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame02.png" id="58_8p60r"]
+[ext_resource type="Texture2D" uid="uid://xayhuctwb1va" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame03.png" id="59_0of64"]
+[ext_resource type="Texture2D" uid="uid://cmg7wh4byclyk" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame04.png" id="60_imidg"]
+[ext_resource type="Texture2D" uid="uid://c4pa51ed02cg7" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame05.png" id="61_66et4"]
+[ext_resource type="Texture2D" uid="uid://d1odf8pr5fjb6" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame06.png" id="62_igwh6"]
+[ext_resource type="Texture2D" uid="uid://c2cqb4jnc7dj0" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame07.png" id="63_i1fwd"]
+[ext_resource type="Texture2D" uid="uid://7is8n7tbcng1" path="res://assets/characters/heroes/bladedancer/animation/attack/SW/attack_south-west_frame08.png" id="64_50k50"]
+[ext_resource type="Texture2D" uid="uid://cs3nqyu00jc62" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame00.png" id="65_s03qe"]
+[ext_resource type="Texture2D" uid="uid://f0qp2833bolk" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame01.png" id="66_bouwt"]
+[ext_resource type="Texture2D" uid="uid://b5a5dk67ulep1" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame02.png" id="67_kk051"]
+[ext_resource type="Texture2D" uid="uid://3usw8mobqs4h" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame03.png" id="68_h1xdg"]
+[ext_resource type="Texture2D" uid="uid://c4kva7n6bomiw" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame04.png" id="69_13gb0"]
+[ext_resource type="Texture2D" uid="uid://c4lxpfgi75k4c" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame05.png" id="70_ffkkc"]
+[ext_resource type="Texture2D" uid="uid://osfnyiyeegwa" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame06.png" id="71_8f7uo"]
+[ext_resource type="Texture2D" uid="uid://744nsouvimfr" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame07.png" id="72_28kaa"]
+[ext_resource type="Texture2D" uid="uid://bl73ck2jt6ktk" path="res://assets/characters/heroes/bladedancer/animation/attack/W/attack_west_frame08.png" id="73_u5xf2"]
+[ext_resource type="Texture2D" uid="uid://dhqva0heqp6bn" path="res://assets/characters/heroes/bladedancer/rotation_east.png" id="74_rb1jp"]
+[ext_resource type="Texture2D" uid="uid://bhmooo1gahyjp" path="res://assets/characters/heroes/bladedancer/rotation_north.png" id="75_ncpyu"]
+[ext_resource type="Texture2D" uid="uid://dfhutlvgg1qi" path="res://assets/characters/heroes/bladedancer/rotation_north-east.png" id="76_t4qso"]
+[ext_resource type="Texture2D" uid="uid://ddxh4hsxb1kk7" path="res://assets/characters/heroes/bladedancer/rotation_north-west.png" id="77_u2778"]
+[ext_resource type="Texture2D" uid="uid://cbl53n38i877a" path="res://assets/characters/heroes/bladedancer/rotation_south.png" id="78_dnqqg"]
+[ext_resource type="Texture2D" uid="uid://be0nwktx1g3l2" path="res://assets/characters/heroes/bladedancer/rotation_south-west.png" id="80_cueqq"]
+[ext_resource type="Texture2D" uid="uid://bfgs5gu06b5u5" path="res://assets/characters/heroes/bladedancer/rotation_west.png" id="81_kb028"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6np7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0xkxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q8j48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ai6g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yiing")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ohwtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m3d4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4yh1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vccwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qg8wx")
+}],
+"loop": false,
+"name": &"attack_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_gkiti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bq3q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jjl56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_grhwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yft2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ylhla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uvrx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_eyp7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4ipum")
+}],
+"loop": false,
+"name": &"attack_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_8ykig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2i4lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ljeuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2wwj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t00kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p0c1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_j7pn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_623b7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_e4nev")
+}],
+"loop": false,
+"name": &"attack_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_ojuvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gam8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xr58x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n8s73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_a003w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wyg8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1l0vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jn868")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8aca5")
+}],
+"loop": false,
+"name": &"attack_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_q5d0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ndxg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_220q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tqw2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_oy2cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bo74o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_3g82b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_o4kik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2t4et")
+}],
+"loop": false,
+"name": &"attack_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_clsvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_hvfkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_txgnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_lke5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8kyds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ae2h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_vx4wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_eiu3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_8pfxv")
+}],
+"loop": false,
+"name": &"attack_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_8dhqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ja7x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8p60r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0of64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_imidg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_66et4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_igwh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_i1fwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_50k50")
+}],
+"loop": false,
+"name": &"attack_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_s03qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_bouwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_kk051")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_h1xdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_13gb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ffkkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_8f7uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_28kaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_u5xf2")
+}],
+"loop": false,
+"name": &"attack_W",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_rb1jp")
+}],
+"loop": false,
+"name": &"idle_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_ncpyu")
+}],
+"loop": false,
+"name": &"idle_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_t4qso")
+}],
+"loop": false,
+"name": &"idle_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_u2778")
+}],
+"loop": false,
+"name": &"idle_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78_dnqqg")
+}],
+"loop": false,
+"name": &"idle_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": false,
+"name": &"idle_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_cueqq")
+}],
+"loop": false,
+"name": &"idle_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_kb028")
+}],
+"loop": false,
+"name": &"idle_W",
+"speed": 9.0
+}]
+
+[node name="Bladedancer" type="Node2D" unique_id=621501332]
+script = ExtResource("1")
+hero_name = "Bladedancer"
+cost = 50
+damage_type = 0
+attack_damage = 8
+attack_radius = 180.0
+attack_speed = 1.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=7189569]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m6np7")
+animation = &"attack_W"

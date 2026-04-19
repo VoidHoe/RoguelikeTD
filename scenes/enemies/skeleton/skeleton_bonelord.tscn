@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://b8sk2p4n7vc3x"]
+
+[ext_resource type="Script" uid="uid://c0bvea3d5f4km" path="res://scripts/enemy_base.gd" id="1_al0y4"]
+[ext_resource type="Texture2D" uid="uid://rc50nwiehvgn" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame00.png" id="2_ccsud"]
+[ext_resource type="Texture2D" uid="uid://dqabpx3j54hr3" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame01.png" id="3_j5ckb"]
+[ext_resource type="Texture2D" uid="uid://dmroh21t1c0jt" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame02.png" id="4_pl0el"]
+[ext_resource type="Texture2D" uid="uid://l2n7wiv4qmer" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame03.png" id="5_0xtxu"]
+[ext_resource type="Texture2D" uid="uid://5r3k7bw7vtb0" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame04.png" id="6_f54rf"]
+[ext_resource type="Texture2D" uid="uid://hr7jlcepl68k" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame05.png" id="7_0cjeb"]
+[ext_resource type="Texture2D" uid="uid://bakrkbstuqtgv" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame06.png" id="8_xuqgl"]
+[ext_resource type="Texture2D" uid="uid://bflnbpwp0q3yy" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame07.png" id="9_kpiql"]
+[ext_resource type="Texture2D" uid="uid://ojlabbg2oq26" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame08.png" id="10_futfv"]
+[ext_resource type="Texture2D" uid="uid://1be0oydarcbp" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-east_frame09.png" id="11_n4o6n"]
+[ext_resource type="Texture2D" uid="uid://dewowboldf2y2" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame00.png" id="12_o2ldo"]
+[ext_resource type="Texture2D" uid="uid://dt774h7o25ni6" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame01.png" id="13_kh2ti"]
+[ext_resource type="Texture2D" uid="uid://dbcgtp1kjho3f" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame02.png" id="14_kjxfq"]
+[ext_resource type="Texture2D" uid="uid://c18epx20uv0ba" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame03.png" id="15_1vtkb"]
+[ext_resource type="Texture2D" uid="uid://drbcfl6v446o" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame04.png" id="16_qdbor"]
+[ext_resource type="Texture2D" uid="uid://clymrgupaa0jm" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame05.png" id="17_mt7pq"]
+[ext_resource type="Texture2D" uid="uid://csd2ey514y70u" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame06.png" id="18_1wgy6"]
+[ext_resource type="Texture2D" uid="uid://bsndh2u33dgka" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame07.png" id="19_sdrnt"]
+[ext_resource type="Texture2D" uid="uid://cjaj6n6wajlky" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame08.png" id="20_qd1sh"]
+[ext_resource type="Texture2D" uid="uid://b1cl3c0fppcp3" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-east_frame09.png" id="21_qyrdi"]
+[ext_resource type="Texture2D" uid="uid://b3fux0j6ovog5" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame00.png" id="22_4n8a2"]
+[ext_resource type="Texture2D" uid="uid://cly8vmwep4m8b" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame01.png" id="23_45q4q"]
+[ext_resource type="Texture2D" uid="uid://c03qcc5l7uyog" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame02.png" id="24_tyj06"]
+[ext_resource type="Texture2D" uid="uid://s1k26sifegfr" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame03.png" id="25_6k08s"]
+[ext_resource type="Texture2D" uid="uid://c3mkty3hmyeai" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame04.png" id="26_36hmh"]
+[ext_resource type="Texture2D" uid="uid://bg2705gsi1ycj" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame05.png" id="27_ic3ek"]
+[ext_resource type="Texture2D" uid="uid://7armadvpavf7" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame06.png" id="28_sapv5"]
+[ext_resource type="Texture2D" uid="uid://bmvh2tmkt810d" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame07.png" id="29_idpru"]
+[ext_resource type="Texture2D" uid="uid://bfhbbcbd7ex2h" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame08.png" id="30_npj1u"]
+[ext_resource type="Texture2D" uid="uid://33q5hrvmkss7" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_south-west_frame09.png" id="31_xbl85"]
+[ext_resource type="Texture2D" uid="uid://bqdhmuts1v4rg" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame00.png" id="32_stsgh"]
+[ext_resource type="Texture2D" uid="uid://by10o8688ol7g" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame01.png" id="33_856nf"]
+[ext_resource type="Texture2D" uid="uid://6vol1lfxlsq3" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame02.png" id="34_4mmqb"]
+[ext_resource type="Texture2D" uid="uid://dbl6k8gv74djl" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame03.png" id="35_hrgiq"]
+[ext_resource type="Texture2D" uid="uid://dwbqyydgryuu6" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame04.png" id="36_qey5n"]
+[ext_resource type="Texture2D" uid="uid://c05mlewlw5bei" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame05.png" id="37_0ig07"]
+[ext_resource type="Texture2D" uid="uid://dnldmvaqybrhd" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame06.png" id="38_lbdhl"]
+[ext_resource type="Texture2D" uid="uid://b7m5toyipacig" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame07.png" id="39_168w5"]
+[ext_resource type="Texture2D" uid="uid://f4cb72mhyjyq" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame08.png" id="40_5a4jx"]
+[ext_resource type="Texture2D" uid="uid://eosmmxupuvuf" path="res://assets/characters/enemies/skeleton/bonelord_iso/walk_north-west_frame09.png" id="41_dnrtw"]
+[ext_resource type="Script" uid="uid://i0x15w1c3x53" path="res://scripts/speed_component.gd" id="42_iqg60"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bonelord"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccsud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j5ckb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pl0el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0xtxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f54rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0cjeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xuqgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kpiql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_futfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n4o6n")
+}],
+"loop": true,
+"name": &"run_1",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_o2ldo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kh2ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kjxfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1vtkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qdbor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mt7pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1wgy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sdrnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qd1sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qyrdi")
+}],
+"loop": true,
+"name": &"run_2",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_4n8a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_45q4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_tyj06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6k08s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_36hmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ic3ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_sapv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_idpru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_npj1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xbl85")
+}],
+"loop": true,
+"name": &"run_3",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_stsgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_856nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4mmqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_hrgiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_qey5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0ig07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_lbdhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_168w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5a4jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dnrtw")
+}],
+"loop": true,
+"name": &"run_4",
+"speed": 9.0
+}]
+
+[node name="SkeletonBonelord" type="Node2D" unique_id=2047381923]
+script = ExtResource("1_al0y4")
+max_hp = 500
+armor = 0.20
+weaknesses = 12
+resistances = 3
+gold_reward = 80
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1762054388]
+position = Vector2(0, -64)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bonelord")
+animation = &"run_2"
+autoplay = "run_1"
+
+[node name="SpeedComponent" type="Node" parent="." unique_id=938471625]
+script = ExtResource("42_iqg60")
+speed = 30.0

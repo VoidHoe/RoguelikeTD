@@ -1,0 +1,421 @@
+[gd_scene format=3 uid="uid://bwe8sx4qbpefx"]
+
+[ext_resource type="Script" uid="uid://dcnkbgkc57fjc" path="res://scripts/hero_base.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://guhi222p4hek" path="res://assets/characters/heroes/stormshard/rotation_south-east.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://blha06cyuyp0h" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame00.png" id="2_35fm5"]
+[ext_resource type="Texture2D" uid="uid://dl8phrr45fib8" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame01.png" id="3_m7q63"]
+[ext_resource type="Texture2D" uid="uid://cjg2bjqu1e60c" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame02.png" id="4_w77e3"]
+[ext_resource type="Texture2D" uid="uid://dhx5af58742tt" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame03.png" id="5_qpihy"]
+[ext_resource type="Texture2D" uid="uid://c7cm5mqs73whg" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame04.png" id="6_p5fg4"]
+[ext_resource type="Texture2D" uid="uid://ckruo6jsvq7qx" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame05.png" id="7_eo0rp"]
+[ext_resource type="Texture2D" uid="uid://di3vscm780na4" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame06.png" id="8_nmitu"]
+[ext_resource type="Texture2D" uid="uid://uahdod6i2cxo" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame07.png" id="9_au4dh"]
+[ext_resource type="Texture2D" uid="uid://cywu7qoppqj44" path="res://assets/characters/heroes/stormshard/animation/attack/E/attack_east_frame08.png" id="10_javf6"]
+[ext_resource type="Texture2D" uid="uid://66bdmsyj5kvp" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame00.png" id="11_3c6tg"]
+[ext_resource type="Texture2D" uid="uid://c5mol42w02sxm" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame01.png" id="12_puv84"]
+[ext_resource type="Texture2D" uid="uid://cvwyrgesbwm8a" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame02.png" id="13_kvgok"]
+[ext_resource type="Texture2D" uid="uid://b4l73ej8ikwsu" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame03.png" id="14_2s8vm"]
+[ext_resource type="Texture2D" uid="uid://dgw7k64hll6fb" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame04.png" id="15_p4fr3"]
+[ext_resource type="Texture2D" uid="uid://bvxyrerg2q1r2" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame05.png" id="16_8fyfl"]
+[ext_resource type="Texture2D" uid="uid://dj0wixarum86k" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame06.png" id="17_33x3r"]
+[ext_resource type="Texture2D" uid="uid://dmb4kn02tvbdb" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame07.png" id="18_mkb1c"]
+[ext_resource type="Texture2D" uid="uid://dutsks6v5enah" path="res://assets/characters/heroes/stormshard/animation/attack/N/attack_north_frame08.png" id="19_hkdw8"]
+[ext_resource type="Texture2D" uid="uid://b1emxhn3vlci0" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame00.png" id="20_nr5gf"]
+[ext_resource type="Texture2D" uid="uid://dmwe7iwblpdqu" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame01.png" id="21_yhjgp"]
+[ext_resource type="Texture2D" uid="uid://tecfaeqh3iei" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame02.png" id="22_3m2cq"]
+[ext_resource type="Texture2D" uid="uid://d0h26gppwcoq1" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame03.png" id="23_23wqp"]
+[ext_resource type="Texture2D" uid="uid://dwfgktmw5i4l1" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame04.png" id="24_gjx8o"]
+[ext_resource type="Texture2D" uid="uid://dv62kpw2kd8hh" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame05.png" id="25_qc1c5"]
+[ext_resource type="Texture2D" uid="uid://bn7hk2swg1qyt" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame06.png" id="26_l66xc"]
+[ext_resource type="Texture2D" uid="uid://67gjydnmt53q" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame07.png" id="27_oo2io"]
+[ext_resource type="Texture2D" uid="uid://dibc36qxg4jh6" path="res://assets/characters/heroes/stormshard/animation/attack/NE/attack_north-east_frame08.png" id="28_3cqi2"]
+[ext_resource type="Texture2D" uid="uid://dp1gbqdxf0wfq" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame00.png" id="29_57loq"]
+[ext_resource type="Texture2D" uid="uid://1agt1bvojr13" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame01.png" id="30_radco"]
+[ext_resource type="Texture2D" uid="uid://g5ikrpggsh1n" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame02.png" id="31_ulmaa"]
+[ext_resource type="Texture2D" uid="uid://dy17pb7up8nvl" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame03.png" id="32_ibj77"]
+[ext_resource type="Texture2D" uid="uid://cbt37qresu5b" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame04.png" id="33_oape3"]
+[ext_resource type="Texture2D" uid="uid://4uj82mheul2x" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame05.png" id="34_ogqga"]
+[ext_resource type="Texture2D" uid="uid://dmvb5tvrd0v0j" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame06.png" id="35_3dr1k"]
+[ext_resource type="Texture2D" uid="uid://dklllpwhfhxj0" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame07.png" id="36_hrviq"]
+[ext_resource type="Texture2D" uid="uid://w0r50g8bur5j" path="res://assets/characters/heroes/stormshard/animation/attack/NW/attack_north-west_frame08.png" id="37_4snna"]
+[ext_resource type="Texture2D" uid="uid://dhotq4qt64sv5" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame00.png" id="38_hno76"]
+[ext_resource type="Texture2D" uid="uid://ctd7gr8pq1hth" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame01.png" id="39_fjti8"]
+[ext_resource type="Texture2D" uid="uid://beomax4n7ifim" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame02.png" id="40_jiuss"]
+[ext_resource type="Texture2D" uid="uid://ce8a8b4h6qqrf" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame03.png" id="41_pax5g"]
+[ext_resource type="Texture2D" uid="uid://c07ahljhu0cx6" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame04.png" id="42_mhei0"]
+[ext_resource type="Texture2D" uid="uid://chxnom3xiite6" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame05.png" id="43_uxbp7"]
+[ext_resource type="Texture2D" uid="uid://dk681w0a62875" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame06.png" id="44_14wny"]
+[ext_resource type="Texture2D" uid="uid://c2rwyd0k753cf" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame07.png" id="45_31bqg"]
+[ext_resource type="Texture2D" uid="uid://ctnkxkr8uq6d" path="res://assets/characters/heroes/stormshard/animation/attack/S/attack_south_frame08.png" id="46_dwlou"]
+[ext_resource type="Texture2D" uid="uid://1lbttatis4cu" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame00.png" id="47_ek14q"]
+[ext_resource type="Texture2D" uid="uid://8jpougmo1shh" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame01.png" id="48_1sfb1"]
+[ext_resource type="Texture2D" uid="uid://c6kekx2bsvgrb" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame02.png" id="49_w3dv0"]
+[ext_resource type="Texture2D" uid="uid://cp803i4gpf1rg" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame03.png" id="50_x5y40"]
+[ext_resource type="Texture2D" uid="uid://cgxtit28ebxcw" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame04.png" id="51_5luyh"]
+[ext_resource type="Texture2D" uid="uid://cx6spn3pkcsfh" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame05.png" id="52_i7xpm"]
+[ext_resource type="Texture2D" uid="uid://cidjwl0iljwkf" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame06.png" id="53_akj0o"]
+[ext_resource type="Texture2D" uid="uid://c660iru1cwsfj" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame07.png" id="54_ehtd5"]
+[ext_resource type="Texture2D" uid="uid://bp5gi555nb5iq" path="res://assets/characters/heroes/stormshard/animation/attack/SE/attack_south-east_frame08.png" id="55_5hhra"]
+[ext_resource type="Texture2D" uid="uid://r7voigorc867" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame00.png" id="56_2us2j"]
+[ext_resource type="Texture2D" uid="uid://608d3hkg12m4" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame01.png" id="57_ip0yt"]
+[ext_resource type="Texture2D" uid="uid://bfflgiw12rs0l" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame02.png" id="58_ge20b"]
+[ext_resource type="Texture2D" uid="uid://cpvfreq5tjbin" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame03.png" id="59_va363"]
+[ext_resource type="Texture2D" uid="uid://ctw14b8f88qhb" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame04.png" id="60_tosps"]
+[ext_resource type="Texture2D" uid="uid://d10qxfulv7jte" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame05.png" id="61_q8441"]
+[ext_resource type="Texture2D" uid="uid://dgsjuiqic6ejr" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame06.png" id="62_qovax"]
+[ext_resource type="Texture2D" uid="uid://bh8fi5ie56nug" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame07.png" id="63_b7pna"]
+[ext_resource type="Texture2D" uid="uid://bgqp7ivqbb6x" path="res://assets/characters/heroes/stormshard/animation/attack/SW/attack_south-west_frame08.png" id="64_dikfh"]
+[ext_resource type="Texture2D" uid="uid://cs730pbug0kks" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame00.png" id="65_ljg40"]
+[ext_resource type="Texture2D" uid="uid://wq5m0r07kdry" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame01.png" id="66_as88x"]
+[ext_resource type="Texture2D" uid="uid://cgbgogddm4oxm" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame02.png" id="67_t3rja"]
+[ext_resource type="Texture2D" uid="uid://bre5lfwq3cca5" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame03.png" id="68_gjq81"]
+[ext_resource type="Texture2D" uid="uid://c8um8jv4ri36x" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame04.png" id="69_yub4u"]
+[ext_resource type="Texture2D" uid="uid://ctfcyxy6w2nob" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame05.png" id="70_gr6md"]
+[ext_resource type="Texture2D" uid="uid://dddjsnktutvms" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame06.png" id="71_xwso2"]
+[ext_resource type="Texture2D" uid="uid://5xaknt48asrg" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame07.png" id="72_eabfx"]
+[ext_resource type="Texture2D" uid="uid://dw2ibtjkxyluf" path="res://assets/characters/heroes/stormshard/animation/attack/W/attack_west_frame08.png" id="73_rmpxs"]
+[ext_resource type="Texture2D" uid="uid://bri0c7hrdu3gw" path="res://assets/characters/heroes/stormshard/rotation_east.png" id="74_be4d7"]
+[ext_resource type="Texture2D" uid="uid://uvwwu6a82kwg" path="res://assets/characters/heroes/stormshard/rotation_north.png" id="75_hl53f"]
+[ext_resource type="Texture2D" uid="uid://00blk81h2rxa" path="res://assets/characters/heroes/stormshard/rotation_north-east.png" id="76_w1abn"]
+[ext_resource type="Texture2D" uid="uid://t7fb0g8qulnb" path="res://assets/characters/heroes/stormshard/rotation_north-west.png" id="77_2euce"]
+[ext_resource type="Texture2D" uid="uid://e7cly8kpp003" path="res://assets/characters/heroes/stormshard/rotation_south.png" id="78_s15nv"]
+[ext_resource type="Texture2D" uid="uid://bv4m67t1uo4up" path="res://assets/characters/heroes/stormshard/rotation_south-west.png" id="80_lf3f5"]
+[ext_resource type="Texture2D" uid="uid://cjcto5nvu6tdj" path="res://assets/characters/heroes/stormshard/rotation_west.png" id="81_y8af0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpgfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_35fm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m7q63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w77e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qpihy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p5fg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eo0rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nmitu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_au4dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_javf6")
+}],
+"loop": false,
+"name": &"attack_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3c6tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_puv84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kvgok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2s8vm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p4fr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8fyfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_33x3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mkb1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hkdw8")
+}],
+"loop": false,
+"name": &"attack_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_nr5gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yhjgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3m2cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_23wqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gjx8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qc1c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_l66xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oo2io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3cqi2")
+}],
+"loop": false,
+"name": &"attack_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_57loq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_radco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ulmaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ibj77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_oape3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ogqga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3dr1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hrviq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_4snna")
+}],
+"loop": false,
+"name": &"attack_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_hno76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fjti8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jiuss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pax5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_mhei0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_uxbp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_14wny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_31bqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_dwlou")
+}],
+"loop": false,
+"name": &"attack_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_ek14q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1sfb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_w3dv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_x5y40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_5luyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_i7xpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_akj0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ehtd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_5hhra")
+}],
+"loop": false,
+"name": &"attack_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_2us2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ip0yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ge20b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_va363")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_tosps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_q8441")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_qovax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_b7pna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_dikfh")
+}],
+"loop": false,
+"name": &"attack_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_ljg40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_as88x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_t3rja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_gjq81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_yub4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_gr6md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_xwso2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_eabfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_rmpxs")
+}],
+"loop": true,
+"name": &"attack_W",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_be4d7")
+}],
+"loop": false,
+"name": &"idle_E",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("75_hl53f")
+}],
+"loop": false,
+"name": &"idle_N",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_w1abn")
+}],
+"loop": false,
+"name": &"idle_NE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_2euce")
+}],
+"loop": false,
+"name": &"idle_NW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("78_s15nv")
+}],
+"loop": false,
+"name": &"idle_S",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": false,
+"name": &"idle_SE",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_lf3f5")
+}],
+"loop": false,
+"name": &"idle_SW",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_y8af0")
+}],
+"loop": false,
+"name": &"idle_W",
+"speed": 9.0
+}]
+
+[node name="Stormshard" type="Node2D" unique_id=447576795]
+script = ExtResource("1")
+hero_name = "Stormshard"
+cost = 55
+damage_type = 4
+attack_damage = 12
+attack_radius = 200.0
+attack_speed = 1.1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1298841613]
+position = Vector2(0, -48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qpgfh")
+animation = &"attack_E"
