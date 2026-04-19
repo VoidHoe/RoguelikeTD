@@ -18,6 +18,10 @@ config/name="RoguelikeTD"
 run/main_scene="res://scenes/maps/run_test.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+RelicState="*res://scripts/relic_state.gd"
+
 [display]
 
 window/size/viewport_width=1920

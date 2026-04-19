@@ -59,7 +59,7 @@ func _do_aoe() -> void:
 		if not is_instance_valid(enemy) or enemy == _target:
 			continue
 		if global_position.distance_to(enemy.global_position) <= aoe_radius:
-			enemy.take_damage(_damage / 2, _damage_type)
+			enemy.take_damage(maxi(_damage >> 1, 1), _damage_type)
 
 func _do_chain() -> void:
 	var nearest: EnemyBase = null
@@ -81,7 +81,7 @@ func _do_chain() -> void:
 	chain_proj.dot_dur = dot_dur
 	chain_proj.slow_chance = slow_chance
 	chain_proj.chain_remaining = chain_remaining - 1
-	chain_proj.setup(nearest, _damage / 2, _damage_type, _color)
+	chain_proj.setup(nearest, maxi(_damage >> 1, 1), _damage_type, _color)
 
 func _draw() -> void:
 	# Halo semi-transparent

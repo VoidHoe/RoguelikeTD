@@ -6,7 +6,8 @@ extends Node2D
 @onready var base_hp_label: Label = $HUD/VBoxContainer/BaseHPLabel
 @onready var slot_markers: Node2D = $IsometricMap/SlotMarkers
 @onready var player_base: PlayerBase = $PlayerBase
-@onready var enemy_container: Node2D = $IsometricMap/Enemies
+# Les ennemis sont spawnnés directement dans iso_map (pas dans un sous-nœud)
+# → le y_sort_enabled d'IsometricMap peut les trier tuile par tuile
 @onready var enemy_path: Path2D = $IsometricMap/Path2D
 @onready var spawn_button: Button = $HUD/VBoxContainer/Button
 @onready var _wave_controller: WaveController = $WaveController
@@ -73,14 +74,22 @@ var _challenge_tracker: ChallengeTracker = ChallengeTracker.new()
 
 # ─── setup ───────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	for i: int in enemy_path.curve.get_point_count():
-		_waypoints.append(enemy_path.curve.get_point_position(i))
+	RelicState.reset()   # nettoyage au début de chaque run
+
+	# Lecture du chemin ennemi
+	if enemy_path == null:
+		push_error("run_test: enemy_path introuvable — vérifie que Path2D est bien enfant de IsometricMap dans run_test.tscn")
+	else:
+		for i: int in enemy_path.curve.get_point_count():
+			_waypoints.append(enemy_path.curve.get_point_position(i))
+		if _waypoints.is_empty():
+			push_error("run_test: Path2D existe mais n'a aucun point — ajoute des points dans le Curve2D.")
 
 	player_base.hp_changed.connect(func(_c: int, _m: int) -> void: _update_hud())
 	player_base.gold_changed.connect(func(_g: int) -> void: _update_hud())
 	player_base.game_over.connect(_show_game_over)
 
-	_wave_controller.setup(_waypoints, enemy_container)
+	_wave_controller.setup(_waypoints, iso_map)
 	_wave_controller.wave_started.connect(_on_wave_started)
 	_wave_controller.wave_cleared.connect(_on_wave_cleared)
 	_wave_controller.boss_wave_cleared.connect(_on_boss_wave_cleared)
@@ -90,26 +99,36 @@ func _ready() -> void:
 		enemy.died.connect(func() -> void:
 			player_base.add_gold(enemy.gold_reward)
 			_challenge_tracker.record_kill(enemy.last_dmg_type)
+			# Crâne maudit : +15 or par Élite tué
+			if enemy.is_elite and _has_relic("Crâne maudit"):
+				player_base.add_gold(15)
 		)
 		enemy.damage_taken.connect(func(amt: int, typ: int) -> void:
 			_challenge_tracker.record_damage(amt, typ)
 		)
 	)
 
-	var children := slot_markers.get_children()
-	for slot_node: Node2D in children:
-		var slot := PlacementSlot.new()
-		slot.grid_position = Vector2i.ZERO
-		add_child(slot)
-		hero_board.register_slot(slot)
-		_slot_map[slot_node] = slot
-		var area := slot_node.get_node_or_null("Area2D") as Area2D
-		if area:
-			var captured := slot_node
-			area.input_event.connect(func(_vp: Node, event: InputEvent, _idx: int) -> void:
-				if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-					_on_slot_clicked(captured)
-			)
+	if slot_markers == null:
+		push_error("run_test: slot_markers introuvable ($IsometricMap/SlotMarkers) — les héros ne pourront pas être placés.")
+	else:
+		var children := slot_markers.get_children()
+		if children.is_empty():
+			push_error("run_test: SlotMarkers n'a pas d'enfants — ajoute des nœuds de slot dans la scène.")
+		for slot_node: Node2D in children:
+			var slot := PlacementSlot.new()
+			slot.grid_position = Vector2i.ZERO
+			add_child(slot)
+			hero_board.register_slot(slot)
+			_slot_map[slot_node] = slot
+			var area := slot_node.get_node_or_null("Area2D") as Area2D
+			if area:
+				var captured := slot_node
+				area.input_event.connect(func(_vp: Node, event: InputEvent, _idx: int) -> void:
+					if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+						_on_slot_clicked(captured)
+				)
+			else:
+				push_error("run_test: le slot '%s' n'a pas d'Area2D — les clics sur ce slot ne fonctionneront pas." % slot_node.name)
 
 	_shop_panel = ShopPanelScene.instantiate()
 	add_child(_shop_panel)
@@ -156,8 +175,7 @@ func _on_wave_draft_chosen(type: String, data: Dictionary) -> void:
 			_shop_panel.add_hero(data)
 			spawn_button.visible = true
 		"relic":
-			_active_relics.append(data)
-			_update_relic_label()
+			_on_relic_acquired(data)
 			spawn_button.visible = true
 	_update_hud()
 
@@ -206,6 +224,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_slot_clicked(slot_node: Node2D) -> void:
 	var target_slot: PlacementSlot = _slot_map.get(slot_node, null)
 	if target_slot == null:
+		push_warning("run_test: slot cliqué non trouvé dans _slot_map — le slot n'était peut-être pas enregistré au démarrage.")
 		return
 
 	if not _pending_placement.is_empty():
@@ -307,8 +326,7 @@ func _on_event_chosen(type: String, data: Dictionary) -> void:
 		"relic":
 			var r := _pick_random_relic()
 			if r:
-				_active_relics.append(r)
-				_update_relic_label()
+				_on_relic_acquired(r)
 		"chaos":
 			player_base.add_gold(data["gold"])
 			player_base.take_damage(data["hp_cost"])
@@ -318,13 +336,30 @@ func _on_event_chosen(type: String, data: Dictionary) -> void:
 			player_base.add_gold(data["gold"])
 			var r := _pick_random_relic()
 			if r:
-				_active_relics.append(r)
-				_update_relic_label()
+				_on_relic_acquired(r)
 	if not _wave_controller.can_start_next_wave():
 		_show_victory()
 		return
 	spawn_button.visible = true
 	_update_hud()
+
+func _has_relic(relic_name: String) -> bool:
+	return RelicState.has_relic(relic_name)
+
+## Point d'entrée unique pour toutes les acquisitions de relique.
+## Applique les effets immédiats (Pierre de tonnerre, Bouclier spectral).
+func _on_relic_acquired(relic: Dictionary) -> void:
+	_active_relics.append(relic)
+	RelicState.active_relics = _active_relics
+	_update_relic_label()
+	match relic.get("name", ""):
+		"Pierre de tonnerre":
+			# Boost les héros déjà placés — les futurs héros se boostent dans leur _ready()
+			for hero: HeroBase in _placed_heroes.values():
+				if is_instance_valid(hero):
+					hero.attack_speed *= 1.1
+		"Bouclier spectral":
+			player_base.add_spectral_shield(1)
 
 func _pick_random_relic() -> Dictionary:
 	var available := RELIC_POOL.filter(func(r: Dictionary) -> bool:
@@ -381,6 +416,20 @@ func _update_hud() -> void:
 	base_hp_label.text = "Base HP : %d / %d" % [player_base.current_hp, player_base.max_hp]
 	spawn_button.disabled = not _pending_placement.is_empty()
 	_shop_panel.refresh(player_base.gold, _is_wave_active)
+	# Slots : affiche les indicateurs de clic (pas les héros — ils sont toujours visibles)
+	# On modifie la visibilité de chaque Area2D, pas du parent qui cache les héros
+	if slot_markers != null:
+		# Montre les slots (clickables) dès qu'une vague n'est PAS active :
+		# - pour placer un héros en attente
+		# - pour cliquer un héros déjà placé et lancer son repositionnement
+		# Pendant une vague active, on cache les slots pour éviter les clics accidentels.
+		var show_slots := not _is_wave_active
+		for slot_node in slot_markers.get_children():
+			var area := slot_node.get_node_or_null("Area2D")
+			# Le héros reste visible ; seul l'indicateur (s'il existe) se cache
+			# Les héros sont des enfants directs du slot_node, pas de l'Area2D
+			if area:
+				area.visible = show_slots
 
 # ─── score & sauvegarde ───────────────────────────────────────────────────────
 func _calculate_gems(is_victory: bool) -> int:

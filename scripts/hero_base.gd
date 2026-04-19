@@ -64,6 +64,9 @@ func _apply_permanent_upgrades() -> void:
 	attack_damage  += _upg_dmg * 2
 	attack_radius  += _upg_rng * 5.0
 	attack_speed   += _upg_spd * 0.1
+	# Pierre de tonnerre : +10 % vitesse d'attaque globale
+	if RelicState.has_relic("Pierre de tonnerre"):
+		attack_speed *= 1.1
 
 func _do_attack(target: EnemyBase) -> void:
 	if not is_instance_valid(target):
