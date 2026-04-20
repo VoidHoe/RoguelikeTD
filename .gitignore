@@ -2,3 +2,4 @@
 *.import
 *.uid
 export_presets.cfg
+.mcp.json

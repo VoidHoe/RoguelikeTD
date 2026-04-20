@@ -12,6 +12,10 @@ const ENEMY_NAMES: Dictionary = {
 	"res://scenes/enemies/skeleton/skeleton_rogue.tscn":   "Rogue",
 	"res://scenes/enemies/skeleton/skeleton_knight.tscn":  "Chevalier",
 	"res://scenes/enemies/skeleton/skeleton_bonelord.tscn":"Bonelord ☠",
+	"res://scenes/enemies/orc/orc_warrior.tscn":           "Guerrier Orc",
+	"res://scenes/enemies/orc/worg.tscn":                  "Worg",
+	"res://scenes/enemies/orc/orc_berserker.tscn":         "Berserker Orc",
+	"res://scenes/enemies/orc/orc_warchief.tscn":          "Seigneur de Guerre ☠",
 }
 
 var _waypoints: Array[Vector2] = []

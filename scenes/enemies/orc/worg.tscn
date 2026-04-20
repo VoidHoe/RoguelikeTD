@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://ctgcakk03pvpx"]
+
+[ext_resource type="Script" uid="uid://cy8hjt38pyffn" path="res://scripts/enemy_base.gd" id="1"]
+[ext_resource type="Script" uid="uid://ewmj8ft71nk" path="res://scripts/speed_component.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dttfm6x64irwj" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame00.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dua86ddror6ej" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame01.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dts13jxn82dbf" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame02.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b1e0wvilyv70e" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame03.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://qu3ld1s7armr" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame04.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://jcp3kiuex26w" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://c1rjepjo44h3y" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame06.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bjryxn2cquej" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NE/walk_north-east_frame07.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bbgxndycd86dh" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame00.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://chghu4namkfp5" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame01.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://807hhnv1q7rm" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame02.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://i50w6pe114co" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame03.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://br0730yw4igcy" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame04.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dwapm3nw3vfv2" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame05.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bles18srinbf3" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame06.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b6ucee7bl0o6c" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SE/walk_south-east_frame07.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dycnnvfhhsbgs" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame00.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://jompkd5ry54u" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame01.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://2xy0osbj1a33" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame02.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://1pqf5eb4sveb" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame03.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://bpr3espbf038t" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame04.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://c04m7rlho4opo" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame05.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://87x3hgrldmji" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame06.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dtdwysfuly1aq" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/SW/walk_south-west_frame07.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://ddo3f1e1fvgnt" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame00.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://c2wreo0qg52qw" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame01.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://mrt3fv4w1puy" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame02.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://b18y8friy3i8a" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame03.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://l68k1fwsj6q3" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame04.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://n6x2031s8goo" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame05.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://cugx2hpr6ql13" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame06.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://clsfkbia56qm5" path="res://assets/characters/enemies/orc/worg_iso/animations/walk/NW/walk_north-west_frame07.png" id="34"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_worg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"run_1",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}],
+"loop": true,
+"name": &"run_2",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": true,
+"name": &"run_3",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
+"loop": true,
+"name": &"run_4",
+"speed": 9.0
+}]
+
+[node name="Worg" type="Node2D" unique_id=100000001]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1")
+max_hp = 45
+armor = 0.05
+weaknesses = 4
+resistances = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=100000002]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_worg")
+animation = &"run_4"
+autoplay = "run_1"
+
+[node name="SpeedComponent" type="Node" parent="." unique_id=100000003]
+script = ExtResource("2")
+speed = 58.0

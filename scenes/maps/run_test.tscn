@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://7v67vge55a46"]
 
-[ext_resource type="Script" uid="uid://dsstsbfc36r86" path="res://scripts/run_test.gd" id="1_sxtk8"]
+[ext_resource type="Script" uid="uid://c7lyrh6sd8wrm" path="res://scripts/run_test.gd" id="1_sxtk8"]
 [ext_resource type="PackedScene" path="res://scenes/components/isometric_map.tscn" id="2_trtvt"]
 [ext_resource type="TileSet" uid="uid://dlase1mgirt4i" path="res://resources/tilesets/base_map_tileset.tres" id="3_wvgw8"]
 [ext_resource type="TileSet" uid="uid://dklvxtx4mexeh" path="res://resources/tilesets/decor_tileset.tres" id="4_73eq5"]
 [ext_resource type="PackedScene" uid="uid://b7jkumxhgvxmc" path="res://scenes/components/slot.tscn" id="4_wvgw8"]
 [ext_resource type="Script" uid="uid://dnarxivoq5ttq" path="res://scripts/hero_board.gd" id="5_ugey6"]
-[ext_resource type="Script" uid="uid://dsqg6boq2qp2l" path="res://scripts/player_base.gd" id="6_hh44o"]
-[ext_resource type="Script" uid="uid://drab5knjerfuu" path="res://scripts/wave_controller.gd" id="7_gx4nb"]
+[ext_resource type="Script" uid="uid://e4fxqqfvsco7" path="res://scripts/player_base.gd" id="6_hh44o"]
+[ext_resource type="Script" uid="uid://dmmc42nhobilw" path="res://scripts/wave_controller.gd" id="7_gx4nb"]
 [ext_resource type="Script" uid="uid://7m1ihpejjij3" path="res://scripts/chapter_definition.gd" id="8_5ejud"]
 [ext_resource type="Script" uid="uid://cu6tgqobfmyv3" path="res://scripts/wave_definition.gd" id="9_hrqpd"]
 [ext_resource type="Script" uid="uid://dvu35hndufrrb" path="res://scripts/wave_entry.gd" id="10_d3oru"]
@@ -19,17 +19,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -32, 82, 0, 0, 0, 0, 32, 52, 0, 0, 0, 0, 128, 100, 0, 0, 0, 0, 160, 84, 0, 0, 0, 0, 348, 180, 0, 0, 0, 0, 260, 228, 0, 0, 0, 0, 352, 276, 0, 0, 0, 0, 512, 196, 0, 0, 0, 0, 640, 260, 0, 0, 0, 0, 608, 276, 0, 0, 0, 0, 704, 324, 0, 0, 0, 0, 608, 372, 0, 0, 0, 0, 736, 436, 0, 0, 0, 0, 832, 484, 0, 0, 0, 0, 968, 552)
 }
 point_count = 15
-
-[sub_resource type="LabelSettings" id="LabelSettings_s00no"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_73eq5"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_trtvt"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wvgw8"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ugey6"]
-font_color = Color(0.9555759, 0.7444058, 0.8963489, 1)
 
 [node name="RunTest" type="Node2D" unique_id=657869980]
 script = ExtResource("1_sxtk8")
@@ -87,7 +76,7 @@ curve = SubResource("Curve2D_s00no")
 [node name="HeroBoard" type="Node" parent="." unique_id=509699560]
 script = ExtResource("5_ugey6")
 
-[node name="GameHUD" parent="." instance=ExtResource("12_gameh")]
+[node name="GameHUD" parent="." unique_id=1424273584 instance=ExtResource("12_gameh")]
 
 [node name="PlayerBase" type="Node" parent="." unique_id=651402560]
 script = ExtResource("6_hh44o")
@@ -95,71 +84,98 @@ script = ExtResource("6_hh44o")
 [node name="WaveController" type="Node" parent="." unique_id=100000001]
 script = ExtResource("7_gx4nb")
 
-[node name="Chapter1" type="Node" parent="WaveController" unique_id=100000002]
+[node name="Chapter1" type="Node" parent="WaveController" unique_id=390323980]
 script = ExtResource("8_5ejud")
 chapter_name = "Les Catacombes"
 
-[node name="Wave1" type="Node" parent="WaveController/Chapter1" unique_id=100000003]
+[node name="Wave1" type="Node" parent="WaveController/Chapter1" unique_id=1253263137]
 script = ExtResource("9_hrqpd")
 
-[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave1" unique_id=100000008]
+[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave1" unique_id=984245019]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_warrior.tscn"
 count = 5
 
-[node name="Wave2" type="Node" parent="WaveController/Chapter1" unique_id=100000004]
+[node name="Worg" type="Node" parent="WaveController/Chapter1/Wave1" unique_id=922578997]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/worg.tscn"
+count = 2
+
+[node name="Wave2" type="Node" parent="WaveController/Chapter1" unique_id=1681607145]
 script = ExtResource("9_hrqpd")
 spawn_interval = 1.2
 
-[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave2" unique_id=100000009]
+[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave2" unique_id=1208628162]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_warrior.tscn"
 count = 3
 
-[node name="SkeletonRogue" type="Node" parent="WaveController/Chapter1/Wave2" unique_id=100000010]
+[node name="SkeletonRogue" type="Node" parent="WaveController/Chapter1/Wave2" unique_id=532182719]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_rogue.tscn"
 count = 3
 
-[node name="Wave3" type="Node" parent="WaveController/Chapter1" unique_id=100000005]
+[node name="Wave3" type="Node" parent="WaveController/Chapter1" unique_id=151552396]
 script = ExtResource("9_hrqpd")
 spawn_interval = 1.0
 
-[node name="SkeletonRogue" type="Node" parent="WaveController/Chapter1/Wave3" unique_id=100000011]
+[node name="SkeletonRogue" type="Node" parent="WaveController/Chapter1/Wave3" unique_id=1360765845]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_rogue.tscn"
 count = 4
 
-[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave3" unique_id=100000012]
+[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave3" unique_id=1673277020]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_knight.tscn"
 
-[node name="Wave4" type="Node" parent="WaveController/Chapter1" unique_id=100000006]
+[node name="OrcWarrior" type="Node" parent="WaveController/Chapter1/Wave3" unique_id=331111680]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/orc_warrior.tscn"
+
+[node name="Wave4" type="Node" parent="WaveController/Chapter1" unique_id=1381223846]
 script = ExtResource("9_hrqpd")
 spawn_interval = 1.0
 
-[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=100000013]
+[node name="SkeletonWarrior" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=1522076568]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_warrior.tscn"
 count = 3
 
-[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=100000014]
+[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=431884540]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_knight.tscn"
 count = 2
 
-[node name="Wave5_Boss" type="Node" parent="WaveController/Chapter1" unique_id=100000007]
+[node name="OrcWarrior" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=1790803066]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/orc_warrior.tscn"
+count = 2
+
+[node name="Worg" type="Node" parent="WaveController/Chapter1/Wave4" unique_id=353832199]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/worg.tscn"
+count = 2
+
+[node name="Wave5_Boss" type="Node" parent="WaveController/Chapter1" unique_id=389021808]
 script = ExtResource("9_hrqpd")
 is_boss = true
 
-[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=100000015]
+[node name="SkeletonKnight" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=175019275]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_knight.tscn"
 count = 3
 
-[node name="SkeletonBonelord" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=100000016]
+[node name="SkeletonBonelord" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=95136096]
 script = ExtResource("10_d3oru")
 scene_path = "res://scenes/enemies/skeleton/skeleton_bonelord.tscn"
+
+[node name="OrcBerserker" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=779017958]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/orc_berserker.tscn"
+
+[node name="OrcWarchief" type="Node" parent="WaveController/Chapter1/Wave5_Boss" unique_id=1360473355]
+script = ExtResource("10_d3oru")
+scene_path = "res://scenes/enemies/orc/orc_warchief.tscn"
 
 [node name="MapConfig" type="Node" parent="." unique_id=1536236516]
 script = ExtResource("11_trtvt")

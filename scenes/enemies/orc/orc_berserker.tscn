@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://orc_berserker_001"]
+
+[ext_resource type="Script" uid="uid://c0bvea3d5f4km" path="res://scripts/enemy_base.gd" id="1"]
+[ext_resource type="Script" uid="uid://i0x15w1c3x53" path="res://scripts/speed_component.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame00.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame01.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame02.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame03.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame04.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame05.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame06.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NE/walk_north-east_frame07.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame00.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame01.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame02.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame03.png" id="14"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame04.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame05.png" id="16"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame06.png" id="17"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SE/walk_south-east_frame07.png" id="18"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame00.png" id="19"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame01.png" id="20"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame02.png" id="21"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame03.png" id="22"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame04.png" id="23"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame05.png" id="24"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame06.png" id="25"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/SW/walk_south-west_frame07.png" id="26"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame00.png" id="27"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame01.png" id="28"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame02.png" id="29"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame03.png" id="30"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame04.png" id="31"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame05.png" id="32"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame06.png" id="33"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/orc/orc_berserker_iso/animations/walk/NW/walk_north-west_frame07.png" id="34"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orcbers"]
+animations = [{
+"frames": [{"duration": 1.0,
+"texture": ExtResource("3")}, {"duration": 1.0,
+"texture": ExtResource("4")}, {"duration": 1.0,
+"texture": ExtResource("5")}, {"duration": 1.0,
+"texture": ExtResource("6")}, {"duration": 1.0,
+"texture": ExtResource("7")}, {"duration": 1.0,
+"texture": ExtResource("8")}, {"duration": 1.0,
+"texture": ExtResource("9")}, {"duration": 1.0,
+"texture": ExtResource("10")}],
+"loop": true,
+"name": &"run_1",
+"speed": 9.0
+}, {
+"frames": [{"duration": 1.0,
+"texture": ExtResource("11")}, {"duration": 1.0,
+"texture": ExtResource("12")}, {"duration": 1.0,
+"texture": ExtResource("13")}, {"duration": 1.0,
+"texture": ExtResource("14")}, {"duration": 1.0,
+"texture": ExtResource("15")}, {"duration": 1.0,
+"texture": ExtResource("16")}, {"duration": 1.0,
+"texture": ExtResource("17")}, {"duration": 1.0,
+"texture": ExtResource("18")}],
+"loop": true,
+"name": &"run_2",
+"speed": 9.0
+}, {
+"frames": [{"duration": 1.0,
+"texture": ExtResource("19")}, {"duration": 1.0,
+"texture": ExtResource("20")}, {"duration": 1.0,
+"texture": ExtResource("21")}, {"duration": 1.0,
+"texture": ExtResource("22")}, {"duration": 1.0,
+"texture": ExtResource("23")}, {"duration": 1.0,
+"texture": ExtResource("24")}, {"duration": 1.0,
+"texture": ExtResource("25")}, {"duration": 1.0,
+"texture": ExtResource("26")}],
+"loop": true,
+"name": &"run_3",
+"speed": 9.0
+}, {
+"frames": [{"duration": 1.0,
+"texture": ExtResource("27")}, {"duration": 1.0,
+"texture": ExtResource("28")}, {"duration": 1.0,
+"texture": ExtResource("29")}, {"duration": 1.0,
+"texture": ExtResource("30")}, {"duration": 1.0,
+"texture": ExtResource("31")}, {"duration": 1.0,
+"texture": ExtResource("32")}, {"duration": 1.0,
+"texture": ExtResource("33")}, {"duration": 1.0,
+"texture": ExtResource("34")}],
+"loop": true,
+"name": &"run_4",
+"speed": 9.0
+}]
+
+[node name="OrcBerserker" type="Node2D" unique_id=100000004]
+script = ExtResource("1")
+max_hp = 220
+armor = 0.15
+weaknesses = 12
+resistances = 3
+gold_reward = 30
+is_elite = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=100000005]
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_orcbers")
+animation = &"run_4"
+autoplay = "run_1"
+
+[node name="SpeedComponent" type="Node" parent="." unique_id=100000006]
+script = ExtResource("2")
+speed = 32.0
