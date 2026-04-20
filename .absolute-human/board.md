@@ -62,7 +62,7 @@ RTD-META-006      RTD-META-007
 |---|---|---|
 | 1 | RTD-META-001, RTD-META-002, RTD-META-003 | ✅ done |
 | 2 | RTD-META-004, RTD-META-005 | ✅ done |
-| 3 | RTD-META-006, RTD-META-007 | 🔄 in-progress (next) |
+| 3 | RTD-META-006, RTD-META-007 | ✅ done |
 | 4 | RTD-META-008, RTD-META-009 | pending |
 | 5 | RTD-META-010 | pending |
 
@@ -113,8 +113,8 @@ RTD-META-006      RTD-META-007
 - "💎 +X gemmes (total : Y)" affiché dans l'écran de fin ✅
 
 ### RTD-META-006 — MetaShop UI
-**Wave:** 3 | **Status:** 🔄 in-progress
-**Fichiers à créer:** `scripts/meta_shop.gd`, `scenes/ui/meta_shop.tscn`
+**Wave:** 3 | **Status:** ✅ done
+**Fichiers créés:** `scripts/meta_shop.gd`
 
 #### Plan détaillé
 **Scène** : CanvasLayer (layer=10) → Panel centré 900×600
@@ -137,15 +137,15 @@ func _on_close_pressed() → void  # emit closed + queue_free
 ```
 
 **Acceptance** :
-- ☐ Ouvre depuis MainMenu
-- ☐ Affiche gems et niveaux corrects au démarrage
-- ☐ Acheter decrémente gems et incrémente niveau
-- ☐ Bouton grisé si gems insuffisants ou niveau 10
-- ☐ Paliers affichés locked/unlocked selon niveau damage
+- ✅ Ouvre depuis MainMenu
+- ✅ Affiche gems et niveaux corrects au démarrage
+- ✅ Acheter décrémente gems et incrémente niveau
+- ✅ Bouton grisé si gems insuffisants ou niveau 10
+- ✅ Paliers affichés locked/unlocked selon niveau damage
 
 ### RTD-META-007 — MainMenu
-**Wave:** 3 | **Status:** 🔄 in-progress
-**Fichiers à créer:** `scripts/main_menu.gd`, `scenes/main_menu.tscn`
+**Wave:** 3 | **Status:** ✅ done
+**Fichiers créés:** `scripts/main_menu.gd`, `scenes/main_menu.tscn`
 
 #### Plan détaillé
 **Scène** : Node2D → fond coloré/noir + VBoxContainer centré
@@ -167,10 +167,10 @@ func _on_forge_pressed() → void  # instancier MetaShop
 **Project Settings** : changer la scène de démarrage pour `scenes/main_menu.tscn`
 
 **Acceptance** :
-- ☐ Jeu démarre sur main menu
-- ☐ Gems affichés et mis à jour après fermeture Forge
-- ☐ Jouer lance la run
-- ☐ Forge ouvre MetaShop
+- ✅ Jeu démarre sur main menu
+- ✅ Gems affichés et mis à jour après fermeture Forge
+- ✅ Jouer lance la run
+- ✅ Forge ouvre MetaShop
 
 ### RTD-META-008 — Code Review
 **Wave:** 4 | **Status:** pending
