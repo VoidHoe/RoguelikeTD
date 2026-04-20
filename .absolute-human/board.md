@@ -63,7 +63,7 @@ RTD-META-006      RTD-META-007
 | 1 | RTD-META-001, RTD-META-002, RTD-META-003 | ✅ done |
 | 2 | RTD-META-004, RTD-META-005 | ✅ done |
 | 3 | RTD-META-006, RTD-META-007 | ✅ done |
-| 4 | RTD-META-008, RTD-META-009 | pending |
+| 4 | RTD-META-008, RTD-META-009 | ✅ done |
 | 5 | RTD-META-010 | pending |
 
 ---
@@ -173,10 +173,26 @@ func _on_forge_pressed() → void  # instancier MetaShop
 - ✅ Forge ouvre MetaShop
 
 ### RTD-META-008 — Code Review
-**Wave:** 4 | **Status:** pending
+**Wave:** 4 | **Status:** ✅ done
+
+**Bugs réels corrigés :**
+- `enemy_base.gd:60` — DoT fractionnaire tronqué à 0 chaque frame @60fps → ajout `_dot_accum` pour accumulation correcte
+- `projectile.gd:83` — chain projectile n'héritait pas `aoe_radius` → ajout `chain_proj.aoe_radius = aoe_radius`
+
+**Faux positifs du reviewer (non corrigés) :**
+- `run_test.gd:518` — `save["total_runs"]` est déjà incrémenté en mémoire avant l'affichage, pas de bug
+- `meta_shop.gd:198` — `spend_gems` déjà dans un `if`, pas de bug
+- Gem loss rewards — spec intentionnelle : waves×5 toujours, +50 si victoire
 
 ### RTD-META-009 — Requirements Validation
-**Wave:** 4 | **Status:** pending
+**Wave:** 4 | **Status:** ✅ done
+
+**Spec GDD vérifiée :**
+- ✅ gems = waves×5 + 50 si victoire → `run_test.gd:422`
+- ✅ MetaShop coût `(level+1)*10` → `meta_shop.gd:196`
+- ✅ Paliers L3/L6/L10 par héros conformes au GDD → `meta_shop.gd:MILESTONES`
+- ✅ MainMenu démarre le jeu via `change_scene_to_file` → `main_menu.gd:65`
+- ✅ Gems persistées via SaveManager JSON → `save_manager.gd`
 
 ### RTD-META-010 — Full Verification
 **Wave:** 5 | **Status:** pending

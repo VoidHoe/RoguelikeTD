@@ -23,6 +23,7 @@ var last_dmg_type: int = DamageTypes.Type.PERCANT   # last damage type that hit 
 var _dot_timer: float = 0.0
 var _dot_dps: float = 0.0
 var _dot_type: int = 0
+var _dot_accum: float = 0.0   # accumulates fractional damage so sub-frame ticks aren't lost
 
 # Slow
 var _slow_timer: float = 0.0
@@ -57,8 +58,10 @@ func _process(delta: float) -> void:
 	# DoT tick — only while moving (alive and on path)
 	if _dot_timer > 0.0 and _moving:
 		_dot_timer -= delta
-		var dot_dmg := int(_dot_dps * delta)
+		_dot_accum += _dot_dps * delta
+		var dot_dmg := int(_dot_accum)
 		if dot_dmg > 0:
+			_dot_accum -= dot_dmg
 			take_damage(dot_dmg, _dot_type)
 		if current_hp <= 0:
 			return
