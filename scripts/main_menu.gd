@@ -4,7 +4,6 @@ extends Node2D
 var _gems_label: Label
 var _canvas: CanvasLayer
 
-
 func _ready() -> void:
 	_build_ui()
 	_update_gems_label()
