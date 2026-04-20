@@ -1,6 +1,6 @@
 # Absolute-Human Board — RoguelikeTD Step 9: Meta-Progression Complète
-**Status:** in-progress
-**Session:** 2026-04-19
+**Status:** completed
+**Session:** 2026-04-19 → 2026-04-20
 **Previous Board:** archive/board-step8-2026-04-19.md
 
 ## Intake Summary
@@ -64,7 +64,7 @@ RTD-META-006      RTD-META-007
 | 2 | RTD-META-004, RTD-META-005 | ✅ done |
 | 3 | RTD-META-006, RTD-META-007 | ✅ done |
 | 4 | RTD-META-008, RTD-META-009 | ✅ done |
-| 5 | RTD-META-010 | pending |
+| 5 | RTD-META-010 | ✅ done |
 
 ---
 
@@ -195,4 +195,23 @@ func _on_forge_pressed() → void  # instancier MetaShop
 - ✅ Gems persistées via SaveManager JSON → `save_manager.gd`
 
 ### RTD-META-010 — Full Verification
-**Wave:** 5 | **Status:** pending
+**Wave:** 5 | **Status:** ✅ done — 2026-04-20
+
+**21 / 21 critères d'acceptance passés**
+
+| Zone | Résultat |
+|---|---|
+| MetaShop UI (RTD-META-006) | 10/10 ✅ |
+| MainMenu (RTD-META-007) | 8/8 ✅ |
+| Bug fixes (RTD-META-008) | 2/2 ✅ |
+| Gem economy (RTD-META-005) | 1/1 ✅ |
+
+**Fichiers créés/modifiés dans cette session :**
+| Fichier | Lignes |
+|---|---|
+| `scripts/meta_shop.gd` | +207 |
+| `scripts/main_menu.gd` | +75 |
+| `scenes/main_menu.tscn` | +6 |
+| `scripts/enemy_base.gd` | +4 (fix DoT accum) |
+| `scripts/projectile.gd` | +1 (fix chain aoe_radius) |
+| `project.godot` | ~1 (main scene) |
