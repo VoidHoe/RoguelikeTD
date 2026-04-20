@@ -80,6 +80,7 @@ func _do_chain() -> void:
 	chain_proj.dot_dps = dot_dps
 	chain_proj.dot_dur = dot_dur
 	chain_proj.slow_chance = slow_chance
+	chain_proj.aoe_radius = aoe_radius
 	chain_proj.chain_remaining = chain_remaining - 1
 	chain_proj.setup(nearest, maxi(_damage >> 1, 1), _damage_type, _color)
 
