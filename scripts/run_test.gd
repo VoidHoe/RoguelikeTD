@@ -531,21 +531,35 @@ func _show_run_end(is_victory: bool) -> void:
 	summary.modulate.a = 0.0
 	canvas.add_child(summary)
 
-	# Bouton Rejouer
-	var btn := Button.new()
-	btn.text = "↺   Rejouer"
-	btn.add_theme_font_size_override("font_size", 26)
-	btn.size = Vector2(200.0, 56.0)
-	btn.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.88)
-	btn.modulate.a = 0.0
-	canvas.add_child(btn)
-	btn.pressed.connect(func() -> void: get_tree().reload_current_scene())
+	# Boutons Rejouer + Menu principal
+	var btn_row := HBoxContainer.new()
+	btn_row.add_theme_constant_override("separation", 20)
+	btn_row.modulate.a = 0.0
+	canvas.add_child(btn_row)
+
+	var btn_replay := Button.new()
+	btn_replay.text = "↺   Rejouer"
+	btn_replay.add_theme_font_size_override("font_size", 26)
+	btn_replay.custom_minimum_size = Vector2(200.0, 56.0)
+	btn_replay.pressed.connect(func() -> void: get_tree().reload_current_scene())
+	btn_row.add_child(btn_replay)
+
+	var btn_menu := Button.new()
+	btn_menu.text = "⌂   Menu principal"
+	btn_menu.add_theme_font_size_override("font_size", 26)
+	btn_menu.custom_minimum_size = Vector2(240.0, 56.0)
+	btn_menu.pressed.connect(func() -> void:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn"))
+	btn_row.add_child(btn_menu)
+
+	# Centrage manuel après ajout des enfants
+	btn_row.set_deferred("position", Vector2(vp.x / 2.0 - 230.0, vp.y * 0.88))
 
 	# ── Animation ──
 	var tween := create_tween().set_parallel(true)
 	var overlay_alpha := 0.65 if is_victory else 0.78
-	tween.tween_property(overlay,  "color:a",    overlay_alpha,   1.4).set_ease(Tween.EASE_IN)
-	tween.tween_property(title,    "modulate:a", 1.0, 0.5).set_delay(0.7).set_ease(Tween.EASE_IN)
-	tween.tween_property(title,    "scale",      Vector2(1.0, 1.0), 0.5).set_delay(0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(summary,  "modulate:a", 1.0, 0.8).set_delay(1.4).set_ease(Tween.EASE_IN)
-	tween.tween_property(btn,      "modulate:a", 1.0, 0.6).set_delay(2.0).set_ease(Tween.EASE_IN)
+	tween.tween_property(overlay,   "color:a",    overlay_alpha,   1.4).set_ease(Tween.EASE_IN)
+	tween.tween_property(title,     "modulate:a", 1.0, 0.5).set_delay(0.7).set_ease(Tween.EASE_IN)
+	tween.tween_property(title,     "scale",      Vector2(1.0, 1.0), 0.5).set_delay(0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(summary,   "modulate:a", 1.0, 0.8).set_delay(1.4).set_ease(Tween.EASE_IN)
+	tween.tween_property(btn_row,   "modulate:a", 1.0, 0.6).set_delay(2.0).set_ease(Tween.EASE_IN)
