@@ -180,8 +180,7 @@ func _on_wave_draft_chosen(type: String, data: Dictionary) -> void:
 			_shop_panel.add_hero(data)
 			_game_hud.set_spawn_visible(true)
 		"relic":
-			_active_relics.append(data)
-			_update_relic_label()
+			_on_relic_acquired(data)
 			_game_hud.set_spawn_visible(true)
 	_update_hud()
 

@@ -18,6 +18,7 @@ var _current_target: EnemyBase = null
 var _upg_dmg: int = 0
 var _upg_rng: int = 0
 var _upg_spd: int = 0
+var _upg_primary: int = 0   # damage for DPS heroes, range for Stormshard (utility)
 var _ability_timer: float = 0.0   # for L10 periodic ability
 
 @onready var anim_sprite: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D")
@@ -64,6 +65,7 @@ func _apply_permanent_upgrades() -> void:
 	attack_damage  += _upg_dmg * 2
 	attack_radius  += _upg_rng * 5.0
 	attack_speed   += _upg_spd * 0.1
+	_upg_primary = _upg_rng if hero_name == "Stormshard" else _upg_dmg
 	# Pierre de tonnerre : +10 % vitesse d'attaque globale
 	if RelicState.has_relic("Pierre de tonnerre"):
 		attack_speed *= 1.1
@@ -82,11 +84,11 @@ func _attack_melee(target: EnemyBase) -> void:
 	match hero_name:
 		"Bladedancer":
 			# L3: 20% crit (double damage)
-			if _upg_dmg >= 3 and randf() < 0.20:
+			if _upg_primary >= 3 and randf() < 0.20:
 				dmg *= 2
 			target.take_damage(dmg, int(damage_type))
 			# L6: bleed DoT — 3 dps for 3 seconds
-			if _upg_dmg >= 6 and is_instance_valid(target):
+			if _upg_primary >= 6 and is_instance_valid(target):
 				target.apply_dot(3.0, 3.0, int(damage_type))
 		_:
 			target.take_damage(dmg, int(damage_type))
@@ -99,24 +101,24 @@ func _spawn_projectile_upgraded(target: EnemyBase) -> void:
 	match hero_name:
 		"Pyromancer":
 			# L3: burn DoT — 2 dps for 4 seconds
-			if _upg_dmg >= 3:
+			if _upg_primary >= 3:
 				proj.dot_dps = 2.0
 				proj.dot_dur = 4.0
 			# L6: AoE explosion radius 50px (half damage)
-			if _upg_dmg >= 6:
+			if _upg_primary >= 6:
 				proj.aoe_radius = 50.0
 		"Stormshard":
 			# L3: 25% chance to slow 50% for 1.5s
-			if _upg_dmg >= 3:
+			if _upg_primary >= 3:
 				proj.slow_chance = 0.25
 			# L6: chain to one more enemy
-			if _upg_dmg >= 6:
+			if _upg_primary >= 6:
 				proj.chain_remaining = 1
 	proj.setup(target, attack_damage, int(damage_type), _get_projectile_color())
 
 func _process_ability(delta: float) -> void:
 	# L10 periodic ability — only if upgrade level >= 10
-	if _upg_dmg < 10:
+	if _upg_primary < 10:
 		return
 	_ability_timer -= delta
 	if _ability_timer > 0.0:

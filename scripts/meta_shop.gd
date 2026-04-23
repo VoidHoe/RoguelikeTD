@@ -4,8 +4,6 @@ extends CanvasLayer
 signal closed
 
 const HEROES := ["Bladedancer", "Pyromancer", "Stormshard"]
-const STATS := ["damage", "range", "speed"]
-const STAT_LABELS := {"damage": "Dégâts", "range": "Portée", "speed": "Vitesse"}
 const MAX_LEVEL := 10
 const MILESTONE_LEVELS := [3, 6, 10]
 const MILESTONES: Dictionary = {
@@ -13,11 +11,20 @@ const MILESTONES: Dictionary = {
 	"Pyromancer":  ["L3 — Brûlure 2DPS/4s", "L6 — Explosion AoE r50", "L10 — Déluge ×3 /12s"],
 	"Stormshard":  ["L3 — Lenteur 50%/1.5s", "L6 — Chaîne +1 rebond", "L10 — Tempête all /15s"],
 }
+const HERO_ARCHETYPES := {
+	"Bladedancer": "dps",
+	"Pyromancer":  "dps",
+	"Stormshard":  "utility"
+}
+const PRIMARY_STAT   := {"dps": "damage", "utility": "range"}
+const SECONDARY_STAT := {"dps": "speed",  "utility": "damage"}
+const ARCHETYPE_LABEL := {"dps": "DPS Pur", "utility": "Utilitaire"}
+const STAT_LABELS := {"damage": "Dégâts", "range": "Portée", "speed": "Vitesse"}
 
 var _gems_label: Label
-var _stat_buttons: Dictionary = {}
-var _stat_level_labels: Dictionary = {}
-var _stat_cost_labels: Dictionary = {}
+var _upgrade_buttons: Dictionary = {}
+var _cost_labels: Dictionary = {}
+var _level_labels: Dictionary = {}
 var _milestone_status_labels: Dictionary = {}
 
 
@@ -75,51 +82,71 @@ func _build_ui() -> void:
 	vbox.add_child(tabs)
 
 	for hero: String in HEROES:
-		_stat_buttons[hero] = {}
-		_stat_level_labels[hero] = {}
-		_stat_cost_labels[hero] = {}
+		_upgrade_buttons[hero] = null
+		_cost_labels[hero] = null
+		_level_labels[hero] = {}
 		_milestone_status_labels[hero] = []
+
+		var archetype: String = HERO_ARCHETYPES[hero]
+		var primary: String = PRIMARY_STAT[archetype]
+		var secondary: String = SECONDARY_STAT[archetype]
 
 		var hero_vbox := VBoxContainer.new()
 		hero_vbox.name = hero
 		hero_vbox.add_theme_constant_override("separation", 8)
 		tabs.add_child(hero_vbox)
 
+		var arch_lbl := Label.new()
+		arch_lbl.text = "Archétype : %s  ·  Priorité : %s → %s" % [
+			ARCHETYPE_LABEL[archetype], STAT_LABELS[primary], STAT_LABELS[secondary]
+		]
+		arch_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		arch_lbl.add_theme_font_size_override("font_size", 13)
+		hero_vbox.add_child(arch_lbl)
+
 		var stats_sep := Label.new()
-		stats_sep.text = "— Améliorations de statistiques —"
+		stats_sep.text = "— Statistiques actuelles —"
 		stats_sep.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		hero_vbox.add_child(stats_sep)
 
-		for stat: String in STATS:
+		for stat: String in [primary, secondary]:
 			var row := HBoxContainer.new()
-			row.custom_minimum_size = Vector2(0, 34)
+			row.custom_minimum_size = Vector2(0, 32)
 			row.add_theme_constant_override("separation", 12)
 			hero_vbox.add_child(row)
 
 			var name_lbl := Label.new()
-			name_lbl.text = STAT_LABELS[stat]
-			name_lbl.custom_minimum_size = Vector2(90, 0)
+			var suffix := " (principal)" if stat == primary else " (secondaire, +1 tous les 2 niveaux)"
+			name_lbl.text = STAT_LABELS[stat] + suffix
+			name_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 			row.add_child(name_lbl)
 
 			var level_lbl := Label.new()
-			level_lbl.custom_minimum_size = Vector2(75, 0)
+			level_lbl.custom_minimum_size = Vector2(60, 0)
+			level_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 			row.add_child(level_lbl)
-			_stat_level_labels[hero][stat] = level_lbl
+			_level_labels[hero][stat] = level_lbl
 
-			var cost_lbl := Label.new()
-			cost_lbl.custom_minimum_size = Vector2(110, 0)
-			row.add_child(cost_lbl)
-			_stat_cost_labels[hero][stat] = cost_lbl
+		var btn_row := HBoxContainer.new()
+		btn_row.alignment = BoxContainer.ALIGNMENT_CENTER
+		btn_row.add_theme_constant_override("separation", 16)
+		hero_vbox.add_child(btn_row)
 
-			var buy_btn := Button.new()
-			buy_btn.text = "Acheter"
-			buy_btn.custom_minimum_size = Vector2(90, 0)
-			buy_btn.pressed.connect(_on_upgrade_pressed.bind(hero, stat))
-			row.add_child(buy_btn)
-			_stat_buttons[hero][stat] = buy_btn
+		var cost_lbl := Label.new()
+		cost_lbl.custom_minimum_size = Vector2(130, 0)
+		cost_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+		btn_row.add_child(cost_lbl)
+		_cost_labels[hero] = cost_lbl
+
+		var upgrade_btn := Button.new()
+		upgrade_btn.text = "Améliorer"
+		upgrade_btn.custom_minimum_size = Vector2(110, 36)
+		upgrade_btn.pressed.connect(_on_upgrade_pressed.bind(hero))
+		btn_row.add_child(upgrade_btn)
+		_upgrade_buttons[hero] = upgrade_btn
 
 		var mil_sep := Label.new()
-		mil_sep.text = "— Paliers (débloqués automatiquement par niveau Dégâts) —"
+		mil_sep.text = "— Paliers (débloqués automatiquement) —"
 		mil_sep.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		hero_vbox.add_child(mil_sep)
 
@@ -163,27 +190,29 @@ func _refresh_ui() -> void:
 	_gems_label.text = "💎 %d gemmes" % gems
 
 	for hero: String in HEROES:
+		var archetype: String = HERO_ARCHETYPES[hero]
+		var primary: String = PRIMARY_STAT[archetype]
+		var secondary: String = SECONDARY_STAT[archetype]
 		var upg: Dictionary = data.get("hero_upgrade_levels", {}).get(hero, {})
-		var dmg_level: int = upg.get("damage", 0)
+		var primary_level: int = upg.get(primary, 0)
+		var secondary_level: int = upg.get(secondary, 0)
+		var at_max: bool = primary_level >= MAX_LEVEL
+		var cost: int = (primary_level + 1) * 10
 
-		for stat: String in STATS:
-			var level: int = upg.get(stat, 0)
-			var cost: int = (level + 1) * 10
-			var at_max: bool = level >= MAX_LEVEL
+		_level_labels[hero][primary].text   = "Niv. %d" % primary_level
+		_level_labels[hero][secondary].text = "Niv. %d" % secondary_level
 
-			_stat_level_labels[hero][stat].text = "Niv. %d" % level
+		if at_max:
+			_cost_labels[hero].text = "MAX"
+		else:
+			_cost_labels[hero].text = "Coût : %d 💎" % cost
 
-			if at_max:
-				_stat_cost_labels[hero][stat].text = "MAX"
-			else:
-				_stat_cost_labels[hero][stat].text = "Coût : %dg" % cost
-
-			_stat_buttons[hero][stat].disabled = at_max or gems < cost
+		_upgrade_buttons[hero].disabled = at_max or gems < cost
 
 		for i: int in range(3):
 			var req: int = MILESTONE_LEVELS[i]
 			var lbl: Label = _milestone_status_labels[hero][i]
-			if dmg_level >= req:
+			if primary_level >= req:
 				lbl.text = "✅ Débloqué"
 				lbl.add_theme_color_override("font_color", Color(0.3, 0.9, 0.3))
 			else:
@@ -191,13 +220,29 @@ func _refresh_ui() -> void:
 				lbl.add_theme_color_override("font_color", Color(0.6, 0.6, 0.6))
 
 
-func _on_upgrade_pressed(hero: String, stat: String) -> void:
+func _on_upgrade_pressed(hero: String) -> void:
+	var archetype: String = HERO_ARCHETYPES[hero]
+	var primary: String = PRIMARY_STAT[archetype]
+	var secondary: String = SECONDARY_STAT[archetype]
+
 	var data := SaveManager.load_data()
-	var level: int = data.get("hero_upgrade_levels", {}).get(hero, {}).get(stat, 0)
-	var cost: int = (level + 1) * 10
-	if SaveManager.spend_gems(cost):
-		SaveManager.set_hero_upgrade(hero, stat, level + 1)
-		_refresh_ui()
+	var primary_level: int = data.get("hero_upgrade_levels", {}).get(hero, {}).get(primary, 0)
+
+	if primary_level >= MAX_LEVEL:
+		return
+
+	var cost: int = (primary_level + 1) * 10
+	if not SaveManager.spend_gems(cost):
+		return
+
+	var new_primary := primary_level + 1
+	SaveManager.set_hero_upgrade(hero, primary, new_primary)
+
+	# Secondary stat at half rate: increments at level 2, 4, 6, 8, 10
+	if new_primary / 2 > primary_level / 2:
+		SaveManager.set_hero_upgrade(hero, secondary, new_primary / 2)
+
+	_refresh_ui()
 
 
 func _on_close_pressed() -> void:
