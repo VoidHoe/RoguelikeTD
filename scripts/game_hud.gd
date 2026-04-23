@@ -27,6 +27,8 @@ var _hint_label:     Label
 var _preview_bar:    Panel
 var _preview_row:    HBoxContainer
 var _preview_box:    StyleBoxFlat
+var _relic_popup:    Panel        = null
+var _active_relics:  Array[Dictionary] = []
 
 # ─── build ───────────────────────────────────────────────────────────────────
 
@@ -161,12 +163,105 @@ func update_wave(current: int, total: int) -> void:
 
 func update_relics(relics: Array[Dictionary]) -> void:
 	if not _relics_row: return
+	_active_relics = relics
 	for c in _relics_row.get_children(): c.queue_free()
 	for r in relics:
-		var dot := _lbl("◆", C_GOLD, 14)
-		dot.tooltip_text = "%s\n%s" % [r.get("name", ""), r.get("desc", "")]
-		dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		_relics_row.add_child(dot)
+		var btn := Button.new()
+		btn.flat = true
+		btn.custom_minimum_size = Vector2(28, 28)
+		btn.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		btn.tooltip_text = r.get("name", "")
+		btn.pressed.connect(_on_relic_btn_pressed)
+		var icon_path: String = r.get("icon", "")
+		var tex: Texture2D = null
+		if not icon_path.is_empty() and ResourceLoader.exists(icon_path):
+			tex = load(icon_path) as Texture2D
+		if tex:
+			var img := TextureRect.new()
+			img.texture = tex
+			img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			img.set_anchors_preset(Control.PRESET_FULL_RECT)
+			img.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			btn.add_child(img)
+		else:
+			btn.text = "◆"
+			btn.add_theme_color_override("font_color", C_GOLD)
+		_relics_row.add_child(btn)
+	if is_instance_valid(_relic_popup):
+		_relic_popup.queue_free()
+		_relic_popup = null
+		_open_relic_popup()
+
+func _on_relic_btn_pressed() -> void:
+	if is_instance_valid(_relic_popup):
+		_relic_popup.queue_free()
+		_relic_popup = null
+	else:
+		_open_relic_popup()
+
+func _open_relic_popup() -> void:
+	const POPUP_W := 300
+	const ROW_H   := 52
+	var popup_h := int(_active_relics.size()) * ROW_H + 44
+	_relic_popup = Panel.new()
+	_relic_popup.anchor_left   = 1.0
+	_relic_popup.anchor_right  = 1.0
+	_relic_popup.anchor_top    = 0.0
+	_relic_popup.anchor_bottom = 0.0
+	_relic_popup.offset_right  = -8.0
+	_relic_popup.offset_left   = -8.0 - POPUP_W
+	_relic_popup.offset_top    = TOP_H + 4.0
+	_relic_popup.offset_bottom = TOP_H + 4.0 + popup_h
+	_relic_popup.add_theme_stylebox_override("panel", _flat(C_CARD, C_BORDER))
+	add_child(_relic_popup)
+
+	var m := MarginContainer.new()
+	m.set_anchors_preset(Control.PRESET_FULL_RECT)
+	m.add_theme_constant_override("margin_left",   10)
+	m.add_theme_constant_override("margin_right",  10)
+	m.add_theme_constant_override("margin_top",     8)
+	m.add_theme_constant_override("margin_bottom",  8)
+	_relic_popup.add_child(m)
+
+	var vbox := VBoxContainer.new()
+	vbox.add_theme_constant_override("separation", 6)
+	m.add_child(vbox)
+
+	var title := _lbl("— Reliques actives —", C_GOLD, 13)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(title)
+
+	if _active_relics.is_empty():
+		var none := _lbl("Aucune relique", C_DIM, 12)
+		none.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		vbox.add_child(none)
+		return
+
+	for r in _active_relics:
+		var row := HBoxContainer.new()
+		row.add_theme_constant_override("separation", 8)
+		vbox.add_child(row)
+
+		var icon_path: String = r.get("icon", "")
+		if not icon_path.is_empty() and ResourceLoader.exists(icon_path):
+			var tex := load(icon_path) as Texture2D
+			if tex:
+				var img := TextureRect.new()
+				img.texture = tex
+				img.custom_minimum_size = Vector2(32, 32)
+				img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+				img.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+				row.add_child(img)
+
+		var col := VBoxContainer.new()
+		col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		col.size_flags_vertical   = Control.SIZE_SHRINK_CENTER
+		row.add_child(col)
+
+		col.add_child(_lbl(r.get("name", ""), C_TEXT, 13))
+		var desc := _lbl(r.get("desc", ""), C_DIM, 11)
+		desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		col.add_child(desc)
 
 func set_spawn_visible(val: bool) -> void:
 	if _spawn_btn: _spawn_btn.visible = val
